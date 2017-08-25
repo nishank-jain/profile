@@ -4,6 +4,7 @@
   "description": "Single repository for my projects",
   "main": "app.js",
   "scripts": {
+    "prestart": "node preinstall.js && npm install",
     "start": "node ./bin/www"
   },
   "author": "Nishank Jain",
