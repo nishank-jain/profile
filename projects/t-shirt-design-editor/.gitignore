@@ -7,7 +7,7 @@ app/tests/coverage/
 .idea/
 coverage/
 
-public/styles/*.css
+# public/styles/*.css
 public/images/uploads
 
 .sublime-project
