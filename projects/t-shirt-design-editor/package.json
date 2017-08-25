@@ -2,9 +2,6 @@
   "name": "design-editor",
   "version": "1.0.0",
   "private": true,
-  "engines": {
-    "node": "4.4.3"
-  },
   "scripts": {
     "postinstall": "bower install",
     "start": "node ./bin/www"
