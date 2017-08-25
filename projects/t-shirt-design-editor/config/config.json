@@ -1,0 +1,16 @@
+{
+	"development": {
+		"dialect": "sqlite",
+		"storage": "db.development.sqlite",
+		"database": "designeditor"
+	},
+	"test": {
+		"dialect": "sqlite",
+		"storage": ":memory:"
+	},
+	"production": {
+		"database": "designeditor",
+		"host": "db.production.sqlite",
+		"dialect": "sqlite"
+	}
+}

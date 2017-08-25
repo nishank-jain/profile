@@ -1,0 +1,1 @@
+var demoAnalyticsApp = angular.module('demoAnalytics', ['ngMaterial', 'demoControllers','demoDirectives', 'ngMessages']);

@@ -1,0 +1,334 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+	/*background-color: #f2f2f2;*/
+}
+
+.flight-view {
+    background-color: #efefef;
+}
+
+.header-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 6px -2px rgba(61,61,61,1);
+}
+
+#navigation > ul {
+	padding: 0;
+	margin: 0;}
+
+#navigation > ul > li {
+	display: inline-block;
+	padding: 15px;
+	padding-top: 21px;
+    padding-bottom: 21px;
+	transition: background-color 0.2s linear 0s;
+}
+
+#navigation > ul > li:hover {
+	cursor: pointer;
+	background-color: #262634;
+	color: #ffffff;
+	transition: background-color 0.2s linear 0s;
+}
+
+#title-bar {
+	width: 85%;
+	margin: 0 auto;
+}
+
+#logo {
+	display: inline-block;
+	width: 30%;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+#logo > div {
+	display: inline-block;
+}
+
+#logo img {
+	width: 200px;
+}
+
+#options-menu {
+	display: none;
+	text-align: center;
+	z-index: 10;
+	background-color: #2ABB9B;
+    box-shadow: 0px 1px 8px 0px rgba(61,61,61,1);
+}
+
+#options-menu > div > div {
+	display: inline-block;
+	padding: 5px;
+	cursor: pointer;
+}
+
+#options-menu > div > div i:not(:first-of-type) {
+	vertical-align: super;
+	font-size: 14px;
+}
+
+#navigation {
+	text-align: right;
+	display: inline-block;
+	width: 69%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+}
+
+.field-names {
+	color: #ffffff;
+	padding-bottom: 5px;
+	text-align: left;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.content > div:nth-child(1) {
+    width: 20%;
+    display: inline-block;
+}
+
+.content > div:nth-child(2) {
+    width: 78%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 8px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: #efff1d;
+  border-radius: 3px;
+  border: 0.2px solid #cbdb00;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 1px 2px 0px rgba(122,122,122,1);
+  border: 1px solid #aeaeae;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: #48485e;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #efff1d;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: #efff1d;
+  border-radius: 3px;
+  border: 0.2px solid #cbdb00;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 1px 2px 0px rgba(122,122,122,1);
+  border: 1px solid #aeaeae;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: #48485e;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #efff1d;
+  border: 0.2px solid #cbdb00;
+  border-radius: 3px;
+}
+input[type=range]::-ms-fill-upper {
+  background: #efff1d;
+  border: 0.2px solid #cbdb00;
+  border-radius: 3px;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 1px 2px 0px rgba(122,122,122,1);
+  border: 1px solid #aeaeae;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: #48485e;
+  cursor: pointer;
+  margin-top: 0;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #efff1d;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #efff1d;
+}
+
+#filters > div {
+	padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 6px -2px rgba(61,61,61,1);
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+}
+
+#filters > div > div:nth-child(1) {
+    text-transform: uppercase;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#price-filter > div:nth-child(2) {
+    text-align: center;
+    font-size: 12px; 
+}
+
+#price-filter > div:nth-child(3) {
+    font-size: 12px; 
+}
+
+#price-filter > div:nth-child(3) > span:nth-child(2) {
+    float: right;
+}
+
+.checkbox-filters {
+	position: relative;
+}
+
+.checkbox-filters img {
+    width: 25px;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.checkbox-filters > div:nth-child(2) {
+    font-size: 12px; 
+}
+
+.checkbox-filters > div:nth-child(2) > div {
+	padding: 5px;
+    cursor: pointer;
+    padding-left: 0;
+}
+
+.checkbox-filters > div:nth-child(2) > div > div {
+	display: inline-block;
+}
+
+#filters label {
+	margin-top: -15px;
+	right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    cursor: pointer;
+    position: absolute;
+    background: -webkit-linear-gradient(top, #222222 0%, #45484d 100%);
+    background: linear-gradient(to bottom, #222222 0%, #45484d 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+}
+
+#filters label:after {
+    content: '';
+    width: 9px;
+    height: 5px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border: 3px solid #fcfff4;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#filters input[type=checkbox] {
+    display: none;
+}
+#filters input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+
+.about-car {
+	background-color: #ffffff;
+    box-shadow: 0px 0px 6px -2px rgba(61,61,61,1);
+}
+
+.about-car > div:nth-child(1) {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.about-car > div:nth-child(2) {
+	display: inline-block;
+    vertical-align: middle;
+    width: 44%;
+}
+
+.car-image > img {
+	width: 350px;
+}
+
+.car-details > div {
+	padding: 15px;
+}
+
+.car-details > div > div:nth-child(1) > span {
+	font-size: 14px;
+}
+
+.car-details > div > div {
+	display: inline-block;
+}
+
+.car-details > div > div:nth-child(1) {
+	width: 50%;
+}
+
+.car-details > div > div:nth-child(2) {
+	width: 48%;
+}
