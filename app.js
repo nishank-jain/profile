@@ -22,4 +22,7 @@ app.use('/car-catalogue', express.static(path.join(__dirname, 'projects/car_cata
 // Crashing planes project
 app.use('/flight-booking', express.static(path.join(__dirname, 'projects/crashing-planes')));
 
+// Home page
+app.use('/', express.static(path.join(__dirname, 'public')));
+
 module.exports = app;
