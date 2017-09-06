@@ -1,11 +1,19 @@
 var express = require('express');
 var path = require('path');
+var sassCompiler 	= require('node-sass-middleware');
 
 var app = express();
 
+// view engine setup
+app.set('views', './views');
+app.set('view engine', 'pug');
+
+require('./routes')(app);
+
+app.use('/', express.static(path.join(__dirname, 'public')));
+
 // T-shirt design project
-var t_shirt_design_editor = require('./projects/t-shirt-design-editor/app');
-app.use('/t-shirt-design-editor', t_shirt_design_editor);
+app.use('/t-shirt-design-editor', require('./projects/t-shirt-design-editor/app'));
 
 // Responsive UI project
 app.use('/responsive-ui', express.static(path.join(__dirname, 'projects/responsive_ui')));
@@ -22,7 +30,34 @@ app.use('/car-catalogue', express.static(path.join(__dirname, 'projects/car_cata
 // Crashing planes project
 app.use('/flight-booking', express.static(path.join(__dirname, 'projects/crashing-planes')));
 
-// Home page
-app.use('/', express.static(path.join(__dirname, 'public')));
+// SCSS to CSS compiler
+app.use('/', sassCompiler({
+	/* Options */
+	src: path.join(__dirname, 'public/styles/scss'),
+	dest: path.join(__dirname, 'public/styles'),
+	debug: true,
+	// outputStyle: 'compressed',
+	// outputStyle: 'extended',
+	outputStyle: 'expanded',
+	prefix: '/styles'
+}));
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+	var err = new Error('Not Found');
+	err.status = 404;
+	next(err);
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+	// set locals, only providing error in development
+	res.locals.message = err.message;
+	res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+	// render the error page
+	res.status(err.status || 500);
+	// res.render('error');
+});
 
 module.exports = app;

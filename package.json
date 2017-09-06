@@ -6,13 +6,14 @@
   "scripts": {
     "prestart": "node preinstall.js && npm install",
     "start": "node ./bin/www",
-    "dev": "nodemon --exec npm start"
+    "dev": "nodemon --exec node ./bin/www"
   },
   "author": "Nishank Jain",
   "license": "ISC",
   "dependencies": {
     "debug": "^3.0.0",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
     "nodemon": "^1.12.0"

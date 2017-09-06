@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+	head
+		include headtags
+	body
+		//- if topbar
+		//- 	include ../sections/topbar
+		//- 	.hide
+		//- 		include ../sections/subbar
+		//- else	
+		//- 	.hide
+		//- 		include ../sections/topbar
+		//- 		include ../sections/subbar
+		include sections/header
+		main
+			block content
+		include sections/footer
+	//- block commonjs
+		include common-scripts
+	//- block js
+		include scripts

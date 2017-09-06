@@ -1,0 +1,22 @@
+extend ../layout
+block append head
+	title #{title}
+	meta(name="description" content="#{description}")
+	link(rel="canonical", href="https://www.nishankjain.com")
+block content
+	.home
+		div SUP!
+		//- include cover
+		//- include explore
+		//- include intro
+		//- include howitworks
+		//- include selections
+		//- include quickbook
+		//- include featured
+		//- include blogs
+		//- include testimonials
+		//- include downloadapp
+		//- include locations
+		//- include ../popups/fittinabox
+//- block append js
+	include scripts
