@@ -10,6 +10,18 @@ app.set('view engine', 'pug');
 
 require('./routes')(app);
 
+// SCSS to CSS compiler
+app.use(sassCompiler({
+	/* Options */
+	src: path.join(__dirname, 'public/styles/scss'),
+	dest: path.join(__dirname, 'public/styles'),
+	debug: true,
+	// outputStyle: 'compressed',
+	// outputStyle: 'extended',
+	outputStyle: 'expanded',
+	prefix: '/styles'
+}));
+
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 // T-shirt design project
@@ -29,18 +41,6 @@ app.use('/car-catalogue', express.static(path.join(__dirname, 'projects/car_cata
 
 // Crashing planes project
 app.use('/flight-booking', express.static(path.join(__dirname, 'projects/crashing-planes')));
-
-// SCSS to CSS compiler
-app.use('/', sassCompiler({
-	/* Options */
-	src: path.join(__dirname, 'public/styles/scss'),
-	dest: path.join(__dirname, 'public/styles'),
-	debug: true,
-	// outputStyle: 'compressed',
-	// outputStyle: 'extended',
-	outputStyle: 'expanded',
-	prefix: '/styles'
-}));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

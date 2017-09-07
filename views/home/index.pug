@@ -4,19 +4,18 @@ block append head
 	meta(name="description" content="#{description}")
 	link(rel="canonical", href="https://www.nishankjain.com")
 block content
-	.home
-		div SUP!
-		//- include cover
-		//- include explore
-		//- include intro
-		//- include howitworks
-		//- include selections
-		//- include quickbook
-		//- include featured
-		//- include blogs
-		//- include testimonials
-		//- include downloadapp
-		//- include locations
-		//- include ../popups/fittinabox
-//- block append js
+	div.parallax-container#index-banner
+		div.section.no-pad-bot
+			div.container
+				br
+				br
+				h1.header.center.teal-text.text-lighten-2 Parallax Template
+				div.row.center
+					h5.header.col.s12.light A modern responsive front-end framework based on Material Design
+				br
+				br
+		div.parallax
+			//- img(src="http://d14x7hkpd082ov.cloudfront.net/home/bg1.png" alt="Unsplashed background img 1")
+			img(src="/images/bg1.png" alt="Unsplashed background img 1")
+block append js
 	include scripts

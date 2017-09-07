@@ -12,10 +12,9 @@ html(lang='en')
 		//- 		include ../sections/topbar
 		//- 		include ../sections/subbar
 		include sections/header
-		main
-			block content
+		block content
 		include sections/footer
-	//- block commonjs
-		include common-scripts
-	//- block js
-		include scripts
+		//- block commonjs
+		//- 	include common-scripts
+		block js
+			include scripts

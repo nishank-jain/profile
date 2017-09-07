@@ -60,3 +60,4 @@ typings/
 *.bat
 *.zip
 .ebextensions
+public/images
