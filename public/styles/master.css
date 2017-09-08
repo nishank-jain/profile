@@ -12,6 +12,12 @@
   more info: http://www.findmebyip.com/litmus/#css3-properties
 
 ------------------------------------------------------------- */
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 85%;
+  }
+}
+
 html, body {
   margin: 0;
   height: 100%;
@@ -28,6 +34,10 @@ html, body {
 
 .text-center {
   text-align: center;
+}
+
+p {
+  line-height: 2rem;
 }
 
 .parallax-container {
@@ -55,4 +65,47 @@ html, body {
   #index-banner .section {
     top: 0;
   }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.profile-pic {
+  position: relative;
+  height: 110px;
+  padding: 0;
+}
+
+.profile-pic img {
+  width: 220px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0px;
+  right: 50%;
+  transform: translate(50%);
+}
+
+.fold {
+  min-height: 275px;
+}
+
+.company {
+  height: 100px;
+}
+
+.experience1 {
+  background-color: #d7002c;
+}
+
+.experience2 {
+  background-color: #004068;
+}
+
+.experience3 {
+  background-color: #f8a515;
 }

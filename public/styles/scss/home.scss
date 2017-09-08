@@ -1,3 +1,7 @@
+p {
+	line-height: 2rem;
+}
+
 .parallax-container {
 	min-height: 380px;
 	line-height: 0;
@@ -28,4 +32,47 @@
 			top: 0;
 		}
 	}
+}
+
+.icon-block {
+	padding: 0 15px;
+	.material-icons {
+		font-size: inherit;
+	}
+}
+
+.profile-pic {
+	position: relative;
+	height: 110px;
+	padding: 0;
+	img {
+		width: 220px;
+		border-radius: 50%;
+		position: absolute;
+		bottom: 0px;
+		// right: 0px;
+		// border: 5px solid white;
+		right: 50%;
+		transform: translate(50%);
+	}
+}
+
+.fold {
+	min-height: 275px;
+}
+
+.company {
+	height: 100px;
+}
+
+.experience1 {
+	background-color: #d7002c;
+}
+
+.experience2 {
+	background-color: #004068;
+}
+
+.experience3 {
+	background-color: #f8a515;
 }

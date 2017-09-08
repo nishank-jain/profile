@@ -4,18 +4,90 @@ block append head
 	meta(name="description" content="#{description}")
 	link(rel="canonical", href="https://www.nishankjain.com")
 block content
-	div.parallax-container#index-banner
-		div.section.no-pad-bot
-			div.container
-				br
-				br
-				h1.header.center.teal-text.text-lighten-2 Parallax Template
-				div.row.center
-					h5.header.col.s12.light A modern responsive front-end framework based on Material Design
-				br
-				br
-		div.parallax
+	.parallax-container
+		.parallax
 			//- img(src="http://d14x7hkpd082ov.cloudfront.net/home/bg1.png" alt="Unsplashed background img 1")
-			img(src="/images/bg1.png" alt="Unsplashed background img 1")
+			img(src="/images/about.png" alt="Unsplashed background img 1")
+	.container
+		.profile-pic
+			.row
+				.col.s12.m4.offset-m8
+					img.z-depth-2(src="/images/pp.png")
+		.about-me
+			.row
+				.col.s12
+					p I am a web development enthusiast from India. I spend my days tinkering with HTML, CSS and JavaScript and nights snake charming with Python. When I am not doing that, I am reading up on web standards, security and performance or
+						a(href="https://www.youtube.com/watch?v=9rIy0xY99a0" target="_blank")  randomly
+						|  surfing YouTube. If all of this becomes seizure-inducing, I go and smash some shuttles on a badminton court. But if Federer is playing, I whole-heartedly embrace the idiocy of the idiot box and skip all of the above.
+	.parallax-container.valign-wrapper.fold
+		.container
+			.row
+				.col.s12
+					h2.center Academics
+		.parallax
+			img(src="/images/academics.png" alt="Unsplashed background img 1")
+	.container
+		.row
+			a.col.s4(href="/academics/#education")
+				.card
+					.card-content
+						p.center
+							i.material-icons school
+							span.card-title Education
+						p I am a Bachelor of Technology in Electrical Engineering and received my undergraduate degree from Indian Institute of Technology Gandhinagar.
+			a.col.s4(href="/academics/#internships")
+				.card
+					.card-content
+						p.center
+							i.material-icons explore
+							span.card-title Internships
+						p I was a Summer Undergraduate Research Fellow at Caltech in the Astronomy and Astrophysics department in the summer of 2013.
+			a.col.s4(href="/academics/#projects")
+				.card
+					.card-content
+						p.center
+							i.material-icons assignment
+							span.card-title Projects
+						p I worked on a project the in spring of 2014 at IIT Gandhinagar to extract a Gravitational Wave Signal from the LIGO detector noise using matched filtering.
+	.parallax-container.valign-wrapper.fold
+		.container
+			.row
+				.col.s12
+					h2.center Work Experience
+		.parallax
+			img(src="/images/workex.png" alt="Unsplashed background img 1")
+	.container
+		.row
+			a.col.s4(href="/experience/#altair")
+				.card
+					.image.center
+						img.company(src="/images/altair.png")
+					.card-content.white-text.experience1
+						p.center
+							span.card-title Education
+						p I am a Bachelor of Technology in Electrical Engineering and received my undergraduate degree from Indian Institute of Technology Gandhinagar.
+			a.col.s4(href="/experience/#courtside")
+				.card
+					.image.center
+						img.company(src="/images/courtside.png")
+					.card-content.white-text.experience2
+						p.center
+							span.card-title Internships
+						p I was a Summer Undergraduate Research Fellow at Caltech in the Astronomy and Astrophysics department in the summer of 2013.
+			a.col.s4(href="/experience/#fitternity")
+				.card
+					.image.center
+						img.company(src="/images/fitternity.png")
+					.card-content.white-text.experience3
+						p.center
+							span.card-title Projects
+						p I worked on a project the in spring of 2014 at IIT Gandhinagar to extract a Gravitational Wave Signal from the LIGO detector noise using matched filtering.
+	.parallax-container.valign-wrapper.fold
+		.container
+			.row
+				.col.s12
+					h2.center Personal Projects
+		.parallax
+			img(src="/images/projects.png" alt="Unsplashed background img 1")
 block append js
 	include scripts

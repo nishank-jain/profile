@@ -3,15 +3,14 @@ html(lang='en')
 	head
 		include headtags
 	body
-		//- if topbar
-		//- 	include ../sections/topbar
+		if topbar
+			include sections/header
 		//- 	.hide
 		//- 		include ../sections/subbar
 		//- else	
 		//- 	.hide
 		//- 		include ../sections/topbar
 		//- 		include ../sections/subbar
-		include sections/header
 		block content
 		include sections/footer
 		//- block commonjs

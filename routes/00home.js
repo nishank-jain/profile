@@ -5,7 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res) {
 	res.render('home/index', {
 		title: "Portfolio - Nishank Jain",
-		description: "About me"
+		description: "About me",
+		topbar: false
 	});
 });
 

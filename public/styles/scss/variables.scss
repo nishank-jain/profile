@@ -18,6 +18,12 @@ $extra-bold: 800;
 // 	padding: 0;
 // }
 
+@media only screen and (min-width: 993px) {
+	.container {
+		width: 85%;
+	}
+}
+
 html, body {
 	margin: 0;
 	height: 100%;
