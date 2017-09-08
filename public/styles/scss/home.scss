@@ -61,6 +61,23 @@ p {
 	min-height: 275px;
 }
 
+.acads {
+	height: 100px;
+	margin-top: 5px;
+}
+
+.acad1 {
+	background-color: #0998e0;
+}
+
+.acad2 {
+	background-color: #ff6e1e;
+}
+
+.acad3 {
+	background-color: #3b3c3c;
+}
+
 .company {
 	height: 100px;
 }
@@ -75,4 +92,41 @@ p {
 
 .experience3 {
 	background-color: #f8a515;
+}
+
+.project-container {
+	.projects {
+		display: block;
+		margin-bottom: 0;
+		img {
+			width: 100%;
+		}
+	}
+	.card {
+		margin: 0;
+	}
+}
+
+.project1 {
+	.card-stacked {
+		background-color: #262634;
+	}
+}
+
+.project2 {
+	.card-stacked {
+		background-color: #607d8b;
+	}
+}
+
+.project3 {
+	.card-stacked {
+		background-color: #48485e;
+	}
+}
+
+.project4 {
+	.card-stacked {
+		background-color: #4682b4;
+	}
 }

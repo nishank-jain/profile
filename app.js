@@ -25,22 +25,22 @@ app.use(sassCompiler({
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 // T-shirt design project
-app.use('/t-shirt-design-editor', require('./projects/t-shirt-design-editor/app'));
+app.use('/projects/t-shirt-design-editor', require('./projects/t-shirt-design-editor/app'));
 
 // Responsive UI project
-app.use('/responsive-ui', express.static(path.join(__dirname, 'projects/responsive_ui')));
+app.use('/projects/responsive-design', express.static(path.join(__dirname, 'projects/responsive_ui')));
 
 // GitHub user search project
-app.use('/github-users', express.static(path.join(__dirname, 'projects/github_users_search')));
+app.use('/projects/github-users', express.static(path.join(__dirname, 'projects/github_users_search')));
 
 // Analytics dashboard project
-app.use('/analytics-dashboard', express.static(path.join(__dirname, 'projects/analytics_dashboard')));
+app.use('/projects/analytics-dashboard', express.static(path.join(__dirname, 'projects/analytics_dashboard')));
 
 // Car catalogue project
-app.use('/car-catalogue', express.static(path.join(__dirname, 'projects/car_catalogue')));
+app.use('/projects/car-catalogue', express.static(path.join(__dirname, 'projects/car_catalogue')));
 
 // Crashing planes project
-app.use('/flight-booking', express.static(path.join(__dirname, 'projects/crashing-planes')));
+app.use('/projects/flight-search', express.static(path.join(__dirname, 'projects/crashing-planes')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
