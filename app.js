@@ -1,14 +1,15 @@
 var express = require('express');
 var path = require('path');
 var sassCompiler 	= require('node-sass-middleware');
+var device = require('express-device');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 var app = express();
 
 // view engine setup
 app.set('views', './views');
 app.set('view engine', 'pug');
-
-require('./routes')(app);
 
 // SCSS to CSS compiler
 app.use(sassCompiler({
@@ -21,6 +22,14 @@ app.use(sassCompiler({
 	outputStyle: 'expanded',
 	prefix: '/styles'
 }));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false }));
+app.use(methodOverride());
+app.use(device.capture());
+device.enableDeviceHelpers(app);
+
+require('./routes')(app);
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 

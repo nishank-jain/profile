@@ -97,36 +97,85 @@ p {
 .project-container {
 	.projects {
 		display: block;
-		margin-bottom: 0;
 		img {
 			width: 100%;
 		}
 	}
-	.card {
-		margin: 0;
-	}
 }
 
 .project1 {
-	.card-stacked {
+	.card-stacked, .card-content {
 		background-color: #262634;
 	}
 }
 
 .project2 {
-	.card-stacked {
+	.card-stacked, .card-content {
 		background-color: #607d8b;
 	}
 }
 
 .project3 {
-	.card-stacked {
+	.card-stacked, .card-content {
 		background-color: #48485e;
 	}
 }
 
 .project4 {
-	.card-stacked {
+	.card-stacked, .card-content {
 		background-color: #4682b4;
+	}
+}
+
+.article-container {
+	.article {
+		width: 100%;
+	}
+	.card-content {
+		position: relative;
+	}
+	.card-title {
+		font-weight: $medium;
+		max-height: 65px;
+		overflow: hidden;
+		text-align: left;
+		&:after {
+			content: "...";
+			position: absolute;
+			top: 80px;
+			left: 24px;
+		}
+	}
+	.description {
+		margin-top: 25px !important;
+		max-height: 60px;
+		overflow: hidden;
+		&:after {
+			content: "...";
+			position: absolute;
+			bottom: 0px;
+			left: 24px;
+		}
+	}
+	.image {
+		border-bottom: 1px solid #e1e1e1;
+	}
+}
+
+.connect-container {
+	.col {
+		text-align: center;
+		img {
+			width: 50px;
+			@media (max-width: 600px) {
+				width: 25px;
+			}
+		}
+	}
+	.icon {
+		margin: 1rem 0 1rem 0;
+		a {
+			display: inline-block;
+		}
 	}
 }

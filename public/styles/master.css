@@ -36,6 +36,32 @@ html, body {
   text-align: center;
 }
 
+.row {
+  margin-bottom: 0;
+}
+
+.card {
+  margin: 1rem 0 1rem 0;
+}
+
+.button-collapse {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  color: white;
+  display: block;
+  z-index: 10;
+}
+
+.side-nav .collapsible-header {
+  padding: 0 40px;
+}
+
+.side-nav .header-contents {
+  padding: 0 30px 0 60px !important;
+  font-weight: 400;
+}
+
 p {
   line-height: 2rem;
 }
@@ -129,29 +155,85 @@ p {
 
 .project-container .projects {
   display: block;
-  margin-bottom: 0;
 }
 
 .project-container .projects img {
   width: 100%;
 }
 
-.project-container .card {
-  margin: 0;
-}
-
-.project1 .card-stacked {
+.project1 .card-stacked, .project1 .card-content {
   background-color: #262634;
 }
 
-.project2 .card-stacked {
+.project2 .card-stacked, .project2 .card-content {
   background-color: #607d8b;
 }
 
-.project3 .card-stacked {
+.project3 .card-stacked, .project3 .card-content {
   background-color: #48485e;
 }
 
-.project4 .card-stacked {
+.project4 .card-stacked, .project4 .card-content {
   background-color: #4682b4;
+}
+
+.article-container .article {
+  width: 100%;
+}
+
+.article-container .card-content {
+  position: relative;
+}
+
+.article-container .card-title {
+  font-weight: 600;
+  max-height: 65px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.article-container .card-title:after {
+  content: "...";
+  position: absolute;
+  top: 80px;
+  left: 24px;
+}
+
+.article-container .description {
+  margin-top: 25px !important;
+  max-height: 60px;
+  overflow: hidden;
+}
+
+.article-container .description:after {
+  content: "...";
+  position: absolute;
+  bottom: 0px;
+  left: 24px;
+}
+
+.article-container .image {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.connect-container .col {
+  text-align: center;
+}
+
+.connect-container .col img {
+  width: 50px;
+}
+
+@media (max-width: 600px) {
+  .connect-container .col img {
+    width: 25px;
+  }
+}
+
+.connect-container .icon {
+  margin: 1rem 0 1rem 0;
+}
+
+.connect-container .icon a {
+  display: inline-block;
 }

@@ -17,9 +17,9 @@ block content
 			.row
 				.col.s12
 					p I am a web development enthusiast from India. I spend my days tinkering with HTML, CSS and JavaScript and nights snake charming with Python. When I am not doing that, I am reading up on web standards, security and performance or
-						a(href="https://www.youtube.com/watch?v=9rIy0xY99a0" target="_blank")  randomly
+						a(href="https://www.youtube.com/watch?v=9rIy0xY99a0")  randomly
 						|  surfing YouTube. If all of this becomes seizure-inducing, I go and smash some shuttles on a badminton court. But if Federer is playing, I whole-heartedly embrace the idiocy of the idiot box and skip all of the above.
-	.parallax-container.valign-wrapper.fold
+	a.parallax-container.valign-wrapper.fold(href="/academics")
 		.container
 			.row
 				.col.s12
@@ -28,7 +28,7 @@ block content
 			img(src="/images/academics.png" alt="Unsplashed background img 1")
 	.container
 		.row
-			a.col.s12.m4(href="/academics/#education" target="_blank")
+			a.col.s12.m4(href="/academics/#education")
 				.card
 					.image.center
 						img.acads(src="/images/iitgn.png")
@@ -37,7 +37,7 @@ block content
 							//- i.material-icons school
 							span.card-title Education
 						p I am a Bachelor of Technology in Electrical Engineering and received my undergraduate degree from Indian Institute of Technology Gandhinagar.
-			a.col.s12.m4(href="/academics/#internships" target="_blank")
+			a.col.s12.m4(href="/academics/#internships")
 				.card
 					.image.center
 						img.acads(src="/images/caltech.png")
@@ -46,7 +46,7 @@ block content
 							//- i.material-icons explore
 							span.card-title Internships
 						p I was a Summer Undergraduate Research Fellow at Caltech in the Astronomy and Astrophysics department in the summer of 2013.
-			a.col.s12.m4(href="/academics/#projects" target="_blank")
+			a.col.s12.m4(href="/academics/#projects")
 				.card
 					.image.center
 						img.acads(src="/images/ligo.png")
@@ -55,7 +55,7 @@ block content
 							//- i.material-icons assignment
 							span.card-title Projects
 						p I worked on a project during spring of 2014 at IIT Gandhinagar to extract a Gravitational Wave Signal from the LIGO detector noise using matched filtering.
-	.parallax-container.valign-wrapper.fold
+	a.parallax-container.valign-wrapper.fold(href="/experience")
 		.container
 			.row
 				.col.s12
@@ -64,7 +64,7 @@ block content
 			img(src="/images/workex.png" alt="Unsplashed background img 1")
 	.container
 		.row
-			a.col.s12.m4(href="/experience/#altair" target="_blank")
+			a.col.s12.m4(href="/experience/#altair")
 				.card
 					.image.center
 						img.company(src="/images/altair.png")
@@ -73,7 +73,7 @@ block content
 							span.card-title Front-end Developer
 						p.center Aug 2014 - Jan 2016
 						p I developed the charting library at Altair for a visual analytics web application called Envision encompassing 17 different chart types including delta-drill, waterfall, ranking etc.
-			a.col.s12.m4(href="/experience/#courtside" target="_blank")
+			a.col.s12.m4(href="/experience/#courtside")
 				.card
 					.image.center
 						img.company(src="/images/courtside.png")
@@ -82,7 +82,7 @@ block content
 							span.card-title Co-founder
 						p.center Jun 2015 - Jun 2016
 						p I co-founded Courtside with 3 college friends and built a tech product to facilitate discovery of sports facilities, reserve slots and enable online arena management.
-			a.col.s12.m4(href="/experience/#fitternity" target="_blank")
+			a.col.s12.m4(href="/experience/#fitternity")
 				.card
 					.image.center
 						img.company(src="/images/fitternity.png")
@@ -91,56 +91,133 @@ block content
 							span.card-title Full-stack Developer
 						p.center Jul 2016 - May 2017
 						p I was the webmaster at Fitternity, redesigned the website, worked on site speed and API improvements, in-memory caching, SEO and deep linking with the Android app.
-	.parallax-container.valign-wrapper.fold
+	a.parallax-container.valign-wrapper.fold(href="/projects")
 		.container
 			.row
 				.col.s12
 					h2.center Personal Projects
 		.parallax
 			img(src="/images/projects.png" alt="Unsplashed background img 1")
-	.container.project-container
-		a.row.projects.project1(href="/projects/responsive-design" target="_blank")
-			.col.s12
-				.card.horizontal.z-depth-0
-					.card-stacked.white-text
-						h3.center.card-title Responsive Design
-						.card-content.valign-wrapper
+	if is_desktop || is_tablet
+		.container.project-container
+			a.row.projects.project1(href="/projects/responsive-design")
+				.col.s12
+					.card.horizontal
+						.card-stacked.white-text
+							h3.center.card-title Responsive Design
+							.card-content.valign-wrapper
+								p A mock-up of the home page of a website using responsive design principles. It is done entirely using custom CSS without any external bootstrap-like CSS library and custom JS for animations.
+						.card-image
+							img(src="/images/project1.png")
+			a.row.projects.project2(href="/projects/t-shirt-design-editor")
+				.col.s12
+					.card.horizontal
+						.card-image
+							img(src="/images/project2.png")
+						.card-stacked.white-text
+							h3.center.card-title T-shirt Design Editor
+							.card-content.valign-wrapper
+								p A SQL database-driven t-shirt design editor written in Angular and using fabric.js where you can add text and multiple images, undo or redo edits, save the designs and add new ones.
+			a.row.projects.project3(href="/projects/flight-search")
+				.col.s12
+					.card.horizontal
+						.card-stacked.white-text
+							h3.center.card-title Flight Search App
+							.card-content.valign-wrapper
+								p A mock app written in Angular to search for flights between two available cities as well as filter and sort them on the basis of price, duration, airline, departure and arrival times.
+						.card-image
+							img(src="/images/project3.png")
+			a.row.projects.project4(href="/projects/analytics-dashboard")
+				.col.s12
+					.card.horizontal
+						.card-image
+							img(src="/images/project4.png")
+						.card-stacked.white-text
+							h3.center.card-title Analytics Dashboard
+							.card-content.valign-wrapper
+								p A primitive dashboard design using Angular's directives and d3.js for charting. It can be split into multiple panes each with its own separate chart. Can be used as a starter for an analytics dashboard.
+	else
+		.container.project-container
+			.row
+				a.col.s12.projects.project1(href="/projects/responsive-design")
+					.card
+						.image.center
+							img(src="/images/project1.png")
+						.card-content.white-text
+							p.center.card-title Responsive Design
 							p A mock-up of the home page of a website using responsive design principles. It is done entirely using custom CSS without any external bootstrap-like CSS library and custom JS for animations.
-					.card-image
-						img(src="/images/project1.png")
-		a.row.projects.project2(href="/projects/t-shirt-design-editor" target="_blank")
-			.col.s12
-				.card.horizontal.z-depth-0
-					.card-image
-						img(src="/images/project2.png")
-					.card-stacked.white-text
-						h3.center.card-title T-shirt Design Editor
-						.card-content.valign-wrapper
+				a.col.s12.projects.project2(href="/projects/t-shirt-design-editor")
+					.card
+						.image.center
+							img(src="/images/project2.png")
+						.card-content.white-text
+							p.center.card-title T-shirt Design Editor
 							p A SQL database-driven t-shirt design editor written in Angular and using fabric.js where you can add text and multiple images, undo or redo edits, save the designs and add new ones.
-		a.row.projects.project3(href="/projects/flight-search" target="_blank")
-			.col.s12
-				.card.horizontal.z-depth-0
-					.card-stacked.white-text
-						h3.center.card-title Flight Search App
-						.card-content.valign-wrapper
+				a.col.s12.projects.project3(href="/projects/flight-search")
+					.card
+						.image.center
+							img(src="/images/project3.png")
+						.card-content.white-text
+							p.center.card-title Flight Search App
 							p A mock app written in Angular to search for flights between two available cities as well as filter and sort them on the basis of price, duration, airline, departure and arrival times.
-					.card-image
-						img(src="/images/project3.png")
-		a.row.projects.project4(href="/projects/analytics-dashboard" target="_blank")
-			.col.s12
-				.card.horizontal.z-depth-0
-					.card-image
-						img(src="/images/project4.png")
-					.card-stacked.white-text
-						h3.center.card-title Analytics Dashboard
-						.card-content.valign-wrapper
+				a.col.s12.projects.project4(href="/projects/analytics-dashboard")
+					.card
+						.image.center
+							img(src="/images/project4.png")
+						.card-content.white-text
+							p.center.card-title Analytics Dashboard
 							p A primitive dashboard design using Angular's directives and d3.js for charting. It can be split into multiple panes each with its own separate chart. Can be used as a starter for an analytics dashboard.
-	.parallax-container.valign-wrapper.fold
+	a.parallax-container.valign-wrapper.fold(href="https://medium.com/@nishankjaintdk")
 		.container
 			.row
 				.col.s12
 					h2.center Blog
 		.parallax
 			img(src="/images/blog.png" alt="Unsplashed background img 1")
+	.container.article-container
+		.row
+			a.col.s12.m4.offset-m2(href="https://medium.com/@nishankjaintdk/setting-up-a-node-js-app-on-a-linux-ami-on-an-aws-ec2-instance-with-nginx-59cbc1bcc68c")
+				.card
+					.image.center
+						img.article(src="https://cdn-images-1.medium.com/fit/c/400/120/1*NFejJ5lJR3nyRLqGicdGbw.png")
+					.card-content.black-text.article1
+						p.center.card-title(title="Setting up a Node.js app on a Linux AMI on an AWS EC2 instance with Nginx") Setting up a Node.js app on a Linux AMI on an AWS EC2 instance with Nginx
+						p.description(title="A step-by-step approach to create an AWS account, launch an EC2 instance, and run a node.js app on") A step-by-step approach to create an AWS account, launch an EC2 instance, and run a node.js app on port 80.
+			a.col.s12.m4(href="https://medium.com/@nishankjaintdk/serving-a-website-on-a-registered-domain-with-https-using-nginx-and-lets-encrypt-8d482e01a682")
+				.card
+					.image.center
+						img.article(src="https://cdn-images-1.medium.com/fit/c/400/120/1*QxSZKPnbvd7_ySqSanwPYA.png")
+					.card-content.black-text.article1
+						p.center.card-title(title="Serving a website on a registered domain with HTTPS using Nginx and Let’s Encrypt") Serving a website on a registered domain with HTTPS using Nginx and Let’s Encrypt
+						p.description(title="How to register and use a domain, install an SSL certificate and serve the website on HTTPS") How to register and use a domain, install an SSL certificate and serve the website on HTTPS
+	.parallax-container.valign-wrapper.fold
+		.container
+			.row
+				.col.s12
+					h2.center Connect
+		.parallax
+			img(src="/images/connect.png" alt="Unsplashed background img 1")
+	.container.connect-container
+		.row
+			.col.s2.offset-s1
+				.github.icon
+					a(href="https://github.com/nishankjain")
+						img(src="/images/github.png")
+			.col.s2
+				.linkedin.icon
+					a(href="https://www.linkedin.com/in/nishankjain10")
+						img(src="/images/linkedin.png")
+			.col.s2
+				.facebook.icon
+					a(href="https://www.facebook.com/NishankJain10")
+						img(src="/images/facebook.png")
+			.col.s2
+				.twitter.icon
+					a(href="https://twitter.com/nj_whysoserious")
+						img(src="/images/twitter.png")
+			.col.s2
+				.instagram.icon
+					a(href="https://www.instagram.com/_nishankjain")
+						img(src="/images/instagram.png")
 block append js
 	include scripts

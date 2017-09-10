@@ -2,6 +2,7 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700';
 @import 'css3-mixins';
 // Font Weights
+$light: 400;
 $regular: 500;
 $medium: 600;
 $bold: 700;
@@ -40,4 +41,31 @@ html, body {
 
 .text-center {
 	text-align: center;
+}
+
+.row {
+	margin-bottom: 0;
+}
+
+.card {
+	margin: 1rem 0 1rem 0
+}
+
+.button-collapse {
+	position: fixed;
+	left: 15px;
+	top: 15px;
+	color: white;
+	display: block;
+	z-index: 10;
+}
+
+.side-nav {
+	.collapsible-header {
+		padding: 0 40px;
+	}
+	.header-contents {
+		padding: 0 30px 0 60px !important;
+		font-weight: $light;
+	}
 }
