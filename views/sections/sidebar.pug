@@ -1,4 +1,27 @@
-ul.side-nav#slide-out
+ul.side-nav#nav-icons.nav-inactive
+	li
+		a.button-collapse(href="#" data-activates="nav-icons")
+			i.material-icons.icon menu
+	li
+		a(href="/academics")
+			i.material-icons.icon school
+			p.icon-name Education
+	li
+		a(href="/experience")
+			i.material-icons.icon work
+			p.icon-name Experience
+	li
+		a(href="/projects")
+			i.material-icons.icon code
+			p.icon-name Projects
+	li
+		a(href="https://medium.com/@nishankjaintdk")
+			i.material-icons.icon border_color
+			p.icon-name Blog
+
+#sidenav-overlay
+
+//- ul.side-nav#slide-out
 	li.no-padding
 		ul.collapsible.collapsible-accordion
 			li
@@ -59,5 +82,5 @@ ul.side-nav#slide-out
 							a.header-contents(href="https://medium.com/@nishankjaintdk/setting-up-a-node-js-app-on-a-linux-ami-on-an-aws-ec2-instance-with-nginx-59cbc1bcc68c") Responsive Design
 						li
 							a.header-contents(href="https://medium.com/@nishankjaintdk/serving-a-website-on-a-registered-domain-with-https-using-nginx-and-lets-encrypt-8d482e01a682") T-shirt Design Editor
-a.button-collapse(href="#" data-activates="slide-out")
-	i.material-icons menu
+//- a.button-collapse(href="#" data-activates="slide-out")
+//- 	i.material-icons menu

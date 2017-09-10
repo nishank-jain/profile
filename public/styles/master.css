@@ -44,15 +44,6 @@ html, body {
   margin: 1rem 0 1rem 0;
 }
 
-.button-collapse {
-  position: fixed;
-  left: 15px;
-  top: 15px;
-  color: white;
-  display: block;
-  z-index: 10;
-}
-
 .side-nav .collapsible-header {
   padding: 0 40px;
 }
@@ -60,6 +51,69 @@ html, body {
 .side-nav .header-contents {
   padding: 0 30px 0 60px !important;
   font-weight: 400;
+}
+
+#nav-icons {
+  transform: translateX(0);
+  width: 50px;
+  z-index: 1000;
+}
+
+#nav-icons li a {
+  padding: 0;
+  height: 60px;
+  line-height: 60px;
+}
+
+#nav-icons li a .icon {
+  width: 50px;
+  height: inherit;
+  line-height: inherit;
+}
+
+#nav-icons li a .icon-name {
+  width: 160px;
+  height: inherit;
+  line-height: inherit;
+}
+
+#nav-icons li a i {
+  text-align: center;
+  margin: 0;
+  vertical-align: middle;
+}
+
+#nav-icons li a p {
+  margin: 0;
+}
+
+.nav-inactive {
+  -webkit-transition: width 0.15s ease-in;
+  -khtml-transition: width 0.15s ease-in;
+  -moz-transition: width 0.15s ease-in;
+  -ms-transition: width 0.15s ease-in;
+  -o-transition: width 0.15s ease-in;
+  transition: width 0.15s ease-in;
+}
+
+.nav-active {
+  -webkit-transition: width 0.2s ease-out;
+  -khtml-transition: width 0.2s ease-out;
+  -moz-transition: width 0.2s ease-out;
+  -ms-transition: width 0.2s ease-out;
+  -o-transition: width 0.2s ease-out;
+  transition: width 0.2s ease-out;
+}
+
+#sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 997;
+  opacity: 0;
 }
 
 p {
