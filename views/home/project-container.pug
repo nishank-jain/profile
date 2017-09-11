@@ -1,0 +1,69 @@
+if is_desktop || is_tablet
+	.container.project-container
+		a.row.projects.project1(href="/projects/responsive-design")
+			.col.s12
+				.card.horizontal
+					.card-stacked.white-text
+						h3.center.card-title Responsive Design
+						.card-content.valign-wrapper
+							p A mock-up of the home page of a website using responsive design principles. It is done entirely using custom CSS without any external bootstrap-like CSS library and custom JS for animations.
+					.card-image
+						img(src=cdn + "/home/project1.png")
+		a.row.projects.project2(href="/projects/t-shirt-design-editor")
+			.col.s12
+				.card.horizontal
+					.card-image
+						img(src=cdn + "/home/project2.png")
+					.card-stacked.white-text
+						h3.center.card-title T-shirt Design Editor
+						.card-content.valign-wrapper
+							p A SQL database-driven t-shirt design editor written in Angular and using fabric.js where you can add text and multiple images, undo or redo edits, save the designs and add new ones.
+		a.row.projects.project3(href="/projects/flight-search")
+			.col.s12
+				.card.horizontal
+					.card-stacked.white-text
+						h3.center.card-title Flight Search App
+						.card-content.valign-wrapper
+							p A mock app written in Angular to search for flights between two available cities as well as filter and sort them on the basis of price, duration, airline, departure and arrival times.
+					.card-image
+						img(src=cdn + "/home/project3.png")
+		a.row.projects.project4(href="/projects/analytics-dashboard")
+			.col.s12
+				.card.horizontal
+					.card-image
+						img(src=cdn + "/home/project4.png")
+					.card-stacked.white-text
+						h3.center.card-title Analytics Dashboard
+						.card-content.valign-wrapper
+							p A primitive dashboard design using Angular's directives and d3.js for charting. It can be split into multiple panes each with its own separate chart. Can be used as a starter for an analytics dashboard.
+else
+	.container.project-container
+		.row
+			a.col.s12.projects.project1(href="/projects/responsive-design")
+				.card
+					.image.center
+						img(src=cdn + "/home/project1.png")
+					.card-content.white-text
+						p.center.card-title Responsive Design
+						p A mock-up of the home page of a website using responsive design principles. It is done entirely using custom CSS without any external bootstrap-like CSS library and custom JS for animations.
+			a.col.s12.projects.project2(href="/projects/t-shirt-design-editor")
+				.card
+					.image.center
+						img(src=cdn + "/home/project2.png")
+					.card-content.white-text
+						p.center.card-title T-shirt Design Editor
+						p A SQL database-driven t-shirt design editor written in Angular and using fabric.js where you can add text and multiple images, undo or redo edits, save the designs and add new ones.
+			a.col.s12.projects.project3(href="/projects/flight-search")
+				.card
+					.image.center
+						img(src=cdn + "/home/project3.png")
+					.card-content.white-text
+						p.center.card-title Flight Search App
+						p A mock app written in Angular to search for flights between two available cities as well as filter and sort them on the basis of price, duration, airline, departure and arrival times.
+			a.col.s12.projects.project4(href="/projects/analytics-dashboard")
+				.card
+					.image.center
+						img(src=cdn + "/home/project4.png")
+					.card-content.white-text
+						p.center.card-title Analytics Dashboard
+						p A primitive dashboard design using Angular's directives and d3.js for charting. It can be split into multiple panes each with its own separate chart. Can be used as a starter for an analytics dashboard.
