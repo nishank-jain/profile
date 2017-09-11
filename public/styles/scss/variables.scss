@@ -111,3 +111,21 @@ html, body {
 	opacity: 0;
 	display: none;
 }
+
+p {
+	line-height: 2rem;
+}
+
+.parallax-container {
+	min-height: 380px;
+	line-height: 0;
+	height: auto;
+	color: rgba(255,255,255,.9);
+	.section {
+		width: 100%;
+	}
+}
+
+.fold {
+	min-height: 275px;
+}

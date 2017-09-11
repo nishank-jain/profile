@@ -132,37 +132,17 @@ p {
   width: 100%;
 }
 
-@media only screen and (max-width: 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
+.fold {
+  min-height: 275px;
 }
 
-@media only screen and (max-width: 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-
-.icon-block .material-icons {
-  font-size: inherit;
-}
-
-.profile-pic {
+.cover-container .profile-pic {
   position: relative;
   height: 110px;
   padding: 0;
 }
 
-.profile-pic img {
+.cover-container .profile-pic img {
   width: 220px;
   border-radius: 50%;
   position: absolute;
@@ -171,40 +151,36 @@ p {
   transform: translate(50%);
 }
 
-.fold {
-  min-height: 275px;
-}
-
-.acads {
+.academics-container .acads {
   height: 100px;
   margin-top: 5px;
 }
 
-.acad1 {
+.academics-container .acad1 {
   background-color: #0998e0;
 }
 
-.acad2 {
+.academics-container .acad2 {
   background-color: #ff6e1e;
 }
 
-.acad3 {
+.academics-container .acad3 {
   background-color: #3b3c3c;
 }
 
-.company {
+.experience-container .company {
   height: 100px;
 }
 
-.experience1 {
+.experience-container .experience1 {
   background-color: #d7002c;
 }
 
-.experience2 {
+.experience-container .experience2 {
   background-color: #004068;
 }
 
-.experience3 {
+.experience-container .experience3 {
   background-color: #f8a515;
 }
 
@@ -216,19 +192,19 @@ p {
   width: 100%;
 }
 
-.project1 .card-stacked, .project1 .card-content {
+.project-container .project1 .card-stacked, .project-container .project1 .card-content {
   background-color: #262634;
 }
 
-.project2 .card-stacked, .project2 .card-content {
+.project-container .project2 .card-stacked, .project-container .project2 .card-content {
   background-color: #607d8b;
 }
 
-.project3 .card-stacked, .project3 .card-content {
+.project-container .project3 .card-stacked, .project-container .project3 .card-content {
   background-color: #48485e;
 }
 
-.project4 .card-stacked, .project4 .card-content {
+.project-container .project4 .card-stacked, .project-container .project4 .card-content {
   background-color: #4682b4;
 }
 
