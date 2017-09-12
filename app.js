@@ -10,8 +10,12 @@ var app = express();
 // view engine setup
 app.set('views', './views');
 app.set('view engine', 'pug');
-// app.locals.cdn = "https://d14x7hkpd082ov.cloudfront.net";
-app.locals.cdn = "/images";
+if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
+	app.locals.cdn = "https://d14x7hkpd082ov.cloudfront.net";
+}
+else {
+	app.locals.cdn = "/images";
+}
 
 // SCSS to CSS compiler
 app.use(sassCompiler({
