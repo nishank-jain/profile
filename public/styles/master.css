@@ -545,6 +545,10 @@ p {
   padding-left: 15px;
 }
 
+.projects-container .project3 .project-details3 .audio-playback {
+  margin-bottom: 35px;
+}
+
 .projects-container .project3 .btn {
   background-color: #056034;
   margin-bottom: 15px;
