@@ -523,3 +523,33 @@ p {
 .projects-container .project2 .btn i {
   color: white;
 }
+
+.projects-container .project3 .card {
+  background-color: #056034;
+}
+
+.projects-container .project3 .project-details3 {
+  background-color: rgba(5, 96, 52, 0.06);
+  padding-top: 15px;
+}
+
+.projects-container .project3 .project-details3 i {
+  color: #056034;
+}
+
+.projects-container .project3 .project-details3 span {
+  background-color: #056034;
+}
+
+.projects-container .project3 .project-details3 .valign-wrapper {
+  padding-left: 15px;
+}
+
+.projects-container .project3 .btn {
+  background-color: #056034;
+  margin-bottom: 15px;
+}
+
+.projects-container .project3 .btn i {
+  color: white;
+}
