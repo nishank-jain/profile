@@ -10,7 +10,7 @@
 	},
 	"production": {
 		"database": "designeditor",
-		"host": "db.production.sqlite",
+		"storage": "db.production.sqlite",
 		"dialect": "sqlite"
 	}
 }
