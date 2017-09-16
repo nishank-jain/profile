@@ -177,11 +177,15 @@ p {
 }
 
 .experience-container .experience2 {
-  background-color: #004068;
+  background-color: #f8a515;
 }
 
-.experience-container .experience3 {
-  background-color: #f8a515;
+.entrepreneurship-container .company {
+  height: 100px;
+}
+
+.entrepreneurship-container .entrepreneurship {
+  background-color: #004068;
 }
 
 .project-container .projects {
