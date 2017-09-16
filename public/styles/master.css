@@ -705,3 +705,38 @@ p {
 .company-container .company2 .tabs .tab a:hover {
   background-color: #f8a91e;
 }
+
+.entrepreneurship-container .details {
+  margin-left: 39px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.entrepreneurship1 .cover {
+  height: 275px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.entrepreneurship1 .cover h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: white;
+}
+
+.entrepreneurship1 .headings i {
+  margin-right: 15px;
+  color: #4c7452;
+}
+
+.entrepreneurship1 .headings span {
+  background-color: #4c7452;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin-right: 30px;
+}
