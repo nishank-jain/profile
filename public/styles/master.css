@@ -624,6 +624,11 @@ p {
   margin: 0;
 }
 
+.company-container .company-details .projects-carousel {
+  margin-left: 39px;
+  padding: 0;
+}
+
 .company-container .company1 .card {
   background-color: #e03150;
 }
@@ -674,6 +679,10 @@ p {
 
 .company-container .company2 .btn i {
   color: white;
+}
+
+.company-container .company2 .tabs-content {
+  background-color: rgba(248, 169, 30, 0.06);
 }
 
 .company-container .company2 .tabs .indicator {

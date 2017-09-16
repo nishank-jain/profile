@@ -48,6 +48,10 @@
 		.row {
 			margin: 0;
 		}
+		.projects-carousel {
+			margin-left: 39px;
+			padding: 0;
+		}
 	}
 	.company1 {
 		.card {
@@ -91,6 +95,9 @@
 			i {
 				color: white;
 			}
+		}
+		.tabs-content {
+			background-color: rgba(248, 169, 30, 0.06);
 		}
 		.tabs {
 			.indicator {
