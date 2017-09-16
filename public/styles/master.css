@@ -712,6 +712,11 @@ p {
   margin-bottom: 25px;
 }
 
+.entrepreneurship-container .links a {
+  display: block;
+  color: inherit;
+}
+
 .entrepreneurship1 .cover {
   height: 275px;
   overflow: hidden;
