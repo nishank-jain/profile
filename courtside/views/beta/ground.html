@@ -1,0 +1,305 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you." />
+    <meta name="keywords" content="sports, sports facilities, book, book grounds, book ground facilities, badminton, cricket, football, volleyball, swimming, tennis, throwball, table tennis, lawn tennis, turf, book turf, indoor court, bangalore, east bangalore" />
+    <title> Courtside - Book sports facilities in Bangalore </title>
+    <link rel="shortcut icon" href="lib/images/favicon.png" type="image/x-icon" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script>
+        if (typeof angular == 'undefined') {
+            document.write(unescape("%3Cscript src='lib/js/angular.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <link rel="stylesheet" type="text/css" href="lib/css/all.css" />
+    <!-- Core CSS file -->
+    <link rel='stylesheet prefetch' href='lib/css/photoswipe.css'>
+    <link rel='stylesheet prefetch' href='lib/css/default-skin/default-skin.css'>
+
+    <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+         In the folder of skin CSS file there are also:
+         - .png and .svg icons sprite,
+         - preloader.gif (for browsers that do not support CSS animations) -->
+    <link rel="stylesheet" href="lib/css/default-skin/default-skin.css">
+</head>
+<body class="pushmenu-push" ng-app="courtsideBeta" ng-controller="GroundProfileController">
+<!--<?php include_once("analyticstracking.php") ?>-->
+    <div class="fixed-menu ground mobile">
+        <div style="width:100%;max-width:1000px;position:relative;text-align:left;margin:auto">
+            <span class="logo-fixed groundPage" style="width:128px;"  onClick="window.open('/','_self');"><img class="logo" src="lib/images/logo.png" alt='Courtside' /></span>
+            <input placeholder="Search for ground, sport or location" name="groundQuery" class="groundQuery" type="text"/>
+            <ul class="search-results mobile">
+                <li areaTags="brookefield" class="Powerplay">Powerplay (Whitefield) <span><img src="lib/images/cricket-menu.png" alt="Cricket" /></span> <span><img src="lib/images/tt-menu.png" alt="Table Tennis" /></span> <span><img src="lib/images/tennis-menu.png" alt="Tennis"></span> <span><img src="lib/images/football-menu.png" alt="Football" /></span></li>
+                <li areaTags="thubrahalli, siddhapura" class="GurukulI">Gurukul (Marthahalli) <span><img src="lib/images/swimming-menu.png" alt="Swimming"/></span> <span><img src="lib/images/tt-menu.png" alt="Table Tennis" /></span> <span><img src="lib/images/football-menu.png" alt="Football" /></span>  <span><img src="lib/images/badminton-menu.png" alt="Badminton"></span></li>
+                <li areaTags="" class="Playmania">Playmania (Bellandur) <span><img src="lib/images/badminton-menu.png" alt="Badminton"></span> <span><img src="lib/images/football-menu.png" alt="Football" /></span></li>
+                <li areaTags="" class="Playstation">Playstation (Bellandur) <span><img src="lib/images/badminton-menu.png" alt="Badminton"></span> <span><img src="lib/images/tt-menu.png" alt="Table Tennis" /></span></li>
+                <li areaTags="chinnappanahalli,brookefield" class="Prettysports">Pretty sports (Marthahalli) <span><img src="lib/images/football-menu.png" alt="Football" /></span></li>
+                <li areaTags="inorbit,rooftop" class="Dreamsports">Dream Fields Sports (Whitefield) <span><img src="lib/images/football-menu.png" alt="Football" /></span> <span><img src="lib/images/cricket-menu.png" alt="cricket" /></span></li>
+                <li areaTags="" class="Decathlon">Decathlon (Whitefield) <span><img src="lib/images/football-menu.png" alt="Football" /></span> <span><img src="lib/images/cricket-menu.png" alt="Cricket" /></span></li>
+                <li areaTags="" class="Sptsports">SPT Sports (Sarjapur Road) <span><img src="lib/images/football-menu.png" alt="Football" /></span> <span><img src="lib/images/cricket-menu.png" alt="Cricket" /></span></li>
+                <li areaTags="siddhapura" class="Tams">TAMS (Marthahalli) <span><img src="lib/images/tennis-menu.png" alt="Tennis"></span></li>
+                <li areaTags="" class="Truebounce">True Bounce (Marthahalli) <span><img src="lib/images/tennis-menu.png" alt="Tennis"></span></li>
+                <li areaTags="Doddanekundi" class="Noahtennis">Noah Sports (Whitefield) <span><img src="lib/images/tennis-menu.png" alt="Tennis"></span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="groundName mobile">
+        <div class="groundInfo">
+            <h1 ng-click="centerOnGround()">{{ground.name}} <!--<a href="#" id="linkImage" ng-click="showMap()">
+                <img ng-src="{{!showLocation && 'images/route.png' || showLocation&& 'images/shutter.png'}}" alt="location">{{firstLine}}<br>{{secondLine}}</a>-->
+            </h1>
+            <p><!--{{ground.address}}<br>-->{{ground.area}}</p>
+            <p><a href="#" id="linkImage" ng-click="showMap()" class="map-photo">
+                <img ng-src="{{!showLocation && 'lib/images/route.png' || showLocation&& 'lib/images/shutter.png'}}" alt="location">{{link}}</a>
+            </p>
+        </div>
+    </div>
+    <div class="ground cover">
+    </div>
+    <div class="mapContent mapArea">
+        <div id="map-canvas" style="width: 100%; height: 100%"></div>
+    </div>
+    <div class="ground contentWrap">
+        <div class="leftPanel mobile">
+            <span class="bookField">
+                For booking or enquiries<br>
+                <b>+91 9742 718 766</b>
+            </span>
+            <ul class="ameneties">
+                <li class="heading">FACILITIES AVAILABLE</li>
+                <li ng-repeat="amenity in ground.amenities track by $index">
+                    <img ng-src="{{
+                        amenity === 'Parking' && 'lib/images/carParking.png' ||
+                        amenity === 'Water' && 'lib/images/waterFacility.png' ||
+                        amenity === 'Washroom' && 'lib/images/washroom.png' ||
+                        amenity === 'Training Bib' && 'lib/images/bib.png' ||
+                        amenity === 'Refresh Bar' && 'lib/images/snackBar.png' ||
+                        amenity === 'Locker' && 'lib/images/locker.png' ||
+                        amenity === 'Coach (On request)' && 'lib/images/coach.png' ||
+                        amenity === 'Stands' && 'lib/images/stands.png'
+                        }}">
+                    <span>{{amenity}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="rightPanel mobile">
+            <ul class="availableSports">
+                <li ng-repeat="sport in ground.sports track by $index" ng-class="{'active': $index === selectedSportIndex}" ng-click="changeSport($index)">
+                    <img ng-src="{{
+                        sport == 'Football' && 'lib/images/football-menu.png' ||
+                        sport == 'Tennis' && 'lib/images/tennis-menu.png' ||
+                        sport == 'Badminton' && 'lib/images/badminton-menu.png' ||
+                        sport == 'Table Tennis' && 'lib/images/tt-menu.png' ||
+                        sport == 'Swimming' && 'lib/images/swimming-menu.png' ||
+                        sport == 'Pool' && 'lib/images/pool-menu.png' ||
+                        sport == 'Mini Cricket' && 'lib/images/cricket-menu.png' ||
+                        sport == 'Cricket' && 'lib/images/cricket-menu.png' ||
+                        sport == 'Volleyball' && 'lib/images/favicon.png' ||
+                        sport == 'Throwball' && 'lib/images/favicon.png'
+                        }}">
+                    <span>{{sport}}</span>
+                </li>
+            </ul>
+            <div class="sportDetails">
+                <h1><!--{{selectedSport}} <span class="arrow-right" style="margin-top:-3px;margin-left:15px;"></span> --><small ng-repeat="turf in turfs track by $index" ng-click="changeTurf($index)" class="active">{{turf.surface}}</small></h1>
+                <!--<h2>{{selectedTurf.surface}}</h2>-->
+                <div class="my-gallery mobile" itemscope itemtype="http://schema.org/ImageGallery">
+
+                    <figure ng-repeat="index in selectedTurf.images">
+                        <a ng-href="images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg" itemprop="contentUrl" >
+                            <img ng-src="images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg" alt="Image description" />
+                        </a>
+                    </figure>
+
+                    <figure ng-if="selectedTurf.hasMoreImages" class="seeMore">
+                      <a ng-href="images/{{ground.id}}/{{selectedTurf.id}}/img/{{selectedTurf.seeMoreImage}}.jpg" itemprop="contentUrl" >
+                          <img ng-src="images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{selectedTurf.seeMoreImage}}.jpg" alt="Image description" />
+                          <span>+</span>
+                      </a>
+                    </figure>
+                    <figure ng-repeat="index in selectedTurf.extraImages" class="hide">
+                      <a ng-href="images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg" itemprop="contentUrl" >
+                          <img ng-src="images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg" alt="Image description" />
+                      </a>
+                    </figure>
+                    <!-- <figure class="hide">
+                        <a href="images/groundImages/Decathlon/3.jpg">
+                            <img src="images/groundImages/Decathlon/thumb/3.jpg" alt="Image description" />
+                            <span>+2</span>
+                        </a>
+                        <figcaption>Image caption 4</figcaption>
+                    </figure> -->
+
+                </div>
+                <ul class="upperCategory">
+                    <li>
+                        <h3>Court Details</h3>
+                        <ul class="groundDetails">
+                            <li><div><span>Coaching</span><span>{{selectedTurf.coaching || 'No'}}</span></div></li>
+                            <li><div><span>Surface</span><span>{{selectedTurf.surface || 'Standard'}}</span></div></li>
+                            <li><div><span>Size</span><span>{{selectedTurf.size || 'Standard'}}</span></div></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Booking Charges</h3>
+                        <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <th>DAY</th>
+                                <th>TIMINGS</th>
+                                <th>HOURLY RATE</th>
+                            </tr>
+                            <tr ng-repeat="timingAndRate in timingsAndRates track by $index">
+                                <td ng-class="{'even': $index % 2 == 0}">{{timingAndRate.day}}</td>
+                                <td colspan="2" ng-class="{'even': $index % 2 == 0}">
+                                    <table style="width:100%;">
+                                        <tr ng-repeat="finalRate in timingAndRate.finalRates track by $index" ng-class="{'border-bottom': $index != timingAndRate.finalRates.length - 1}">
+                                            <td width="50%">{{finalRate.timing}}</td>
+                                            <td width="50%">{{finalRate.rate}}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+
+
+                            <!--<tr>-->
+                                <!--<td rowspan="2">MON to THU</td>-->
+                                <!--<td class="border-bottom">6am - 11am & 5pm - 3am</td>-->
+                                <!--<td class="border-bottom">Rs 1200</td>-->
+                                <!--<td class="border-bottom">Rs 2200</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>11am - 5pm</td>-->
+                                <!--<td>Rs 1100</td>-->
+                                <!--<td>Rs 2000</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td class="even" rowspan="2">FRI to SUN</td>-->
+                                <!--<td class="even border-bottom">6am - 11am & 5pm - 3am</td>-->
+                                <!--<td class="even border-bottom">Rs 1400</td>-->
+                                <!--<td class="even border-bottom">Rs 2600</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td class="even">11am - 5pm</td>-->
+                                <!--<td class="even">Rs 1200</td>-->
+                                <!--<td class="even">Rs 2200</td>-->
+                            <!--</tr>-->
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="leftPanel mobileOnly mobile">
+            <ul class="ameneties">
+                <li class="heading">FACILITIES AVAILABLE</li>
+                <li ng-repeat="amenity in ground.amenities track by $index">
+                    <img ng-src="{{
+                        amenity === 'Parking' && 'lib/images/carParking.png' ||
+                        amenity === 'Water' && 'lib/images/waterFacility.png' ||
+                        amenity === 'Washroom' && 'lib/images/washroom.png' ||
+                        amenity === 'Training Bib' && 'lib/images/bib.png' ||
+                        amenity === 'Refresh Bar' && 'lib/images/snackBar.png' ||
+                        amenity === 'Locker' && 'lib/images/locker.png' ||
+                        amenity === 'Coach (On request)' && 'lib/images/coach.png' ||
+                        amenity === 'Stands' && 'lib/images/stands.png'
+                        }}">
+                    <span>{{amenity}}</span>
+                </li>
+            </ul>
+            <span class="bookField">
+                For booking or enquiries<br>
+                <b>+91 9742 718 766</b>
+            </span>
+        </div>
+        
+        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+            <!-- Background of PhotoSwipe.
+                 It's a separate element, as animating opacity is faster than rgba(). -->
+            <div class="pswp__bg"></div>
+
+            <!-- Slides wrapper with overflow:hidden. -->
+            <div class="pswp__scroll-wrap">
+
+                <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+                <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+
+                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                <div class="pswp__ui pswp__ui--hidden">
+
+                    <div class="pswp__top-bar">
+
+                        <!--  Controls are self-explanatory. Order can be changed. -->
+
+                        <div class="pswp__counter"></div>
+
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                        <!-- element will get class pswp__preloader--active when preloader is running -->
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                    </button>
+
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                    </button>
+
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <br>
+        <br>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='lib/js/jquery-2.1.3.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+    <script src="lib/js/index.js"></script>
+    <script src="lib/js/jquery.transit.min.js"></script>
+    <!-- <script src="lib/js/photoswipe-ui-default.min.js"></script> -->
+    <!-- <script src="lib/js/photoswipe.min.js"></script> -->
+    <script src='http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe.min.js'></script>
+    <script src='http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe-ui-default.min.js'></script>
+    <script src="lib/js/ground.js"></script>
+</body>
+</html>

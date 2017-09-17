@@ -1,0 +1,170 @@
+@font-face
+{
+font-family: SourceSans;
+src: url('../font/SourceSansPro-Regular.otf');
+}
+@font-face
+{
+font-family: SourceSansBold;
+src: url('../font/SourceSansPro-Bold.otf');
+}
+@font-face
+{
+font-family: SourceSansBlack;
+src: url('../font/SourceSansPro-Black.otf');
+}
+@font-face
+{
+font-family: RobotoBold;
+src: url('../font/Roboto-Bold.ttf');
+}
+@font-face
+{
+font-family: Roboto;
+src: url('../font/Roboto-Regular.ttf');
+}
+@font-face
+{
+font-family: SourceSansLight;
+src: url('../font/SourceSansPro-Light.otf');
+}
+html, body {margin:0;padding:0;height:100%;font-size:12px;font-family:SourceSans}
+
+/*Abhishek Umrao edits below this*/
+.bodyWrap {
+	width: 100%;
+	height: auto;
+}
+
+.bodyWrap  .logo-bar {
+	width:100%;
+	height:50px;
+	background:#444;
+}
+
+.bodyWrap  .menu-bar {
+	width:100%;
+	height:auto;
+	background:#458d2f;
+	border-bottom:2px solid #feef40;
+}
+.bodyWrap .cover-section{
+	background:url('../images/ground-cover.jpg') bottom center no-repeat;
+	width:100%;
+	height:250px;	
+	position:relative;
+}
+.bodyWrap .cover-section .cover-content{
+	background:url('../images/cover-bg.png') top left;
+	height:100%;
+	width:100%;
+	position:absolute;
+	bottom:-40px;
+	right:0px;
+}
+.bodyWrap .cover-section .cover-content h1{
+	font-family:SourceSansBlack;
+	color:#fff;
+	margin-left:80px;
+	font-weight:normal;
+	margin-top:60px;
+	font-size:40px;
+}
+.bodyWrap .cover-section .cover-content .user-rating-badge{
+	list-style-type:none;
+	color:#fff;
+	font-family:SourceSans;
+	font-size:12px;
+	height:20px;
+	background:#222;
+	width:190px;
+	margin:0px;
+	padding:0px;
+	margin-left:80px;
+	margin-top:53px;
+	letter-spacing:1px;
+	font-weight:normal;
+}
+.bodyWrap .cover-section .cover-content .user-rating-badge li{
+	display:inline-block;
+	vertical-align:middle;
+	text-align:center;
+	line-height:20px;
+	margin:0px;
+	padding:0px;
+	width:60px;
+	position:relative;
+	left:0px;
+	top:0px;
+}
+.bodyWrap .cover-section .cover-content .user-rating-badge li img{
+	vertical-align:middle;
+	display:inline-block;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-27px;
+	margin-top:-33px;
+}
+.bodyWrap .menu-section {
+	padding-top:45px;
+	background:#f7f7f7;
+	width:100%;
+	height:160px;
+}
+.bodyWrap .menu-section  ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	margin-left:50px;
+	text-align: justify;
+	width:90%;
+}
+.bodyWrap .menu-section  ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+.bodyWrap .menu-section  ul li:not(.short-bio) {
+	line-height:110px;
+	padding:0px 20px;
+	cursor:pointer;
+}
+.bodyWrap .menu-section  ul li {
+	display:inline-block;
+	font-size:14px;
+	font-family:SourceSansBold;
+	height:120px;
+	vertical-align:middle;
+	text-align:center;
+	width:auto;
+}
+.bodyWrap .menu-section  ul li i{
+	font-size:16px;
+	display:inline-block;
+	padding-right:10px;
+	color:#666;
+}
+.bodyWrap .menu-section  ul li.short-bio{
+	width:250px;
+	text-align:center;
+	font-family:SourceSans;
+}
+.bodyWrap .menu-section  ul li.short-bio span{
+	display:block;
+}
+.bodyWrap .menu-section  ul li.short-bio span.rating-info{
+	font-size:12px;
+	letter-spacing:1px;
+	font-family:SourceSansBold;
+	margin-bottom:15px;
+}
+.bodyWrap .menu-section  ul li.short-bio span.short-border{
+	width:40px;
+	border-top:1px solid #444;
+	margin:auto;
+}
+.bodyWrap .menu-section  ul li.short-bio span.profile-bio{
+	padding:7px 0px;
+	font-size:12px;
+}

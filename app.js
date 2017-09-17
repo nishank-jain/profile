@@ -31,7 +31,7 @@ app.use(sassCompiler({
 }));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride());
 app.use(device.capture());
 device.enableDeviceHelpers(app);
@@ -41,7 +41,7 @@ require('./routes')(app);
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 // Courtside Beta Website
-// app.use('/courtside-beta', require('./courtside/beta/app'));
+app.use('/courtside', require('./courtside/app'));
 
 // T-shirt design project
 app.use('/projects/t-shirt-design-editor', require('./projects/t-shirt-design-editor/app'));
