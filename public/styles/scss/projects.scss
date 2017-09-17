@@ -1,0 +1,45 @@
+.personal-projects-container {
+	.projects {
+		.image {
+			background-image: url(/images/home/project1.png);
+			height: 150px;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+	.project1 {
+		.card-content {
+			background-color: #262634;
+		}
+	}
+
+	.project2 {
+		.card-content {
+			background-color: #607d8b;
+		}
+	}
+
+	.project3 {
+		.card-content {
+			background-color: #48485e;
+		}
+	}
+
+	.project4 {
+		.card-content {
+			background-color: #4682b4;
+		}
+	}
+
+	.project5 {
+		.card-content {
+			background-color: #f1592a;
+		}
+	}
+
+	.more-projects {
+		a {
+			margin: auto;
+		}
+	}
+}

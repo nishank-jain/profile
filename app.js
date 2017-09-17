@@ -40,6 +40,9 @@ require('./routes')(app);
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 
+// Courtside Beta Website
+// app.use('/courtside-beta', require('./courtside/beta/app'));
+
 // T-shirt design project
 app.use('/projects/t-shirt-design-editor', require('./projects/t-shirt-design-editor/app'));
 

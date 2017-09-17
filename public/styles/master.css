@@ -768,3 +768,34 @@ p {
     width: 100%;
   }
 }
+
+.personal-projects-container .projects .image {
+  background-image: url(/images/home/project1.png);
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.personal-projects-container .project1 .card-content {
+  background-color: #262634;
+}
+
+.personal-projects-container .project2 .card-content {
+  background-color: #607d8b;
+}
+
+.personal-projects-container .project3 .card-content {
+  background-color: #48485e;
+}
+
+.personal-projects-container .project4 .card-content {
+  background-color: #4682b4;
+}
+
+.personal-projects-container .project5 .card-content {
+  background-color: #f1592a;
+}
+
+.personal-projects-container .more-projects a {
+  margin: auto;
+}
