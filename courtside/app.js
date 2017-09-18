@@ -4,6 +4,8 @@ var path = require('path');
 // var logger = require('morgan');
 // var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/root');
 
 var app = express();
 
@@ -22,7 +24,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 require('./routes')(app);
 
 app.use(express.static(path.join(__dirname, 'public')));
-console.log(path.join(__dirname, 'public'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
