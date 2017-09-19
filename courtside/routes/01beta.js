@@ -1,19 +1,40 @@
 var express = require('express');
 var router = express.Router();
-var Ground = require('../models/grounds');
+var groundsController = require('../controllers/grounds');
 
-// Home page route
+// Home page
 router.get('/', function(req, res) {
-	// Ground.find({}, function(err, grounds) {
-	// 	if (err) throw err;
-	// 	console.log(grounds);
-	// });
-	res.render('beta/index', {
-		title: "Courtside - Book sports facilities in Bangalore",
-		description: "Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you.",
-		topbar: false
+	groundsController.list(req, function(err, grounds) {
+		if (err) {
+			res.send(err);
+			return;
+		}
+		res.render('beta/index', {
+			title: "Courtside - Book sports facilities in Bangalore",
+			description: "Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you.",
+			topbar: false,
+			grounds: grounds
+		});
 	});
 });
+
+
+// Ground page
+router.get('/:groundSlug', function(req, res) {
+	groundsController.detail(req, function(err, ground) {
+		if (err) {
+			res.send(err);
+			return;
+		}
+		res.render('beta/ground', {
+			title: "Courtside - Book sports facilities in Bangalore",
+			description: "Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you.",
+			topbar: false,
+			ground: ground
+		});
+	});
+});
+
 
 module.exports = function (app) {
 	app.use('/beta', router);

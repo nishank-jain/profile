@@ -5,7 +5,14 @@ var path = require('path');
 // var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/root');
+// var compression = require('compression');
+// var expressValidator = require('express-validator');
+
+var dev_db_url = 'mongodb://localhost/root';
+var mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 var app = express();
 
@@ -13,13 +20,25 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
+	app.locals.cdn = "https://d14x7hkpd082ov.cloudfront.net";
+}
+else {
+	app.locals.cdn = "/courtside/";
+}
+
+app.locals.betaUrl = "/courtside/beta/";
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+// app.use(expressValidator() ); // Add this after the bodyParser middleware!
 // app.use(cookieParser());
+
+// app.use(compression()); //Compress all routes
 
 require('./routes')(app);
 

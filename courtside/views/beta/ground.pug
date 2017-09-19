@@ -1,0 +1,240 @@
+html
+	head
+		meta(name='viewport', content='width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+		meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+		meta(name='description', content='Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you.')
+		meta(name='keywords', content='sports, sports facilities, book, book grounds, book ground facilities, badminton, cricket, football, volleyball, swimming, tennis, throwball, table tennis, lawn tennis, turf, book turf, indoor court, bangalore, east bangalore')
+		title  Courtside - Book sports facilities in Bangalore 
+		link(rel='shortcut icon', href=cdn + 'images/favicon.png', type='image/x-icon')
+		link(rel='stylesheet', type='text/css', href=cdn + 'styles/all.css')
+		link(rel='stylesheet prefetch', href=cdn + 'styles/photoswipe.css')
+		link(rel='stylesheet prefetch', href=cdn + 'styles/default-skin/default-skin.css')
+		link(rel='stylesheet', href=cdn + 'styles/default-skin/default-skin.css')
+	body.pushmenu-push
+		.fixed-menu.ground.mobile
+			div(style='width:100%;max-width:1000px;position:relative;text-align:left;margin:auto')
+				span.logo-fixed.groundPage(style='width:128px;', onclick="window.open('/','_self');")
+					img.logo(src=cdn + 'images/logo.png', alt='Courtside')
+				input.groundQuery(placeholder='Search for ground, sport or location', name='groundQuery', type='text')
+				ul.search-results.mobile
+					li.Powerplay(areatags='brookefield')
+						| Powerplay (Whitefield)
+						span
+							img(src=cdn + 'images/cricket-menu.png', alt='Cricket')
+						span
+							img(src=cdn + 'images/tt-menu.png', alt='Table Tennis')
+						span
+							img(src=cdn + 'images/tennis-menu.png', alt='Tennis')
+						span
+							img(src=cdn + 'images/football-menu.png', alt='Football')
+					li.GurukulI(areatags='thubrahalli, siddhapura')
+						| Gurukul (Marthahalli)
+						span
+							img(src=cdn + 'images/swimming-menu.png', alt='Swimming')
+						span
+							img(src=cdn + 'images/tt-menu.png', alt='Table Tennis')
+						span
+							img(src=cdn + 'images/football-menu.png', alt='Football')
+						span
+							img(src=cdn + 'images/badminton-menu.png', alt='Badminton')
+					li.Playmania(areatags='')
+						| Playmania (Bellandur)
+						span
+							img(src=cdn + 'images/badminton-menu.png', alt='Badminton')
+						span
+							img(src=cdn + 'images/football-menu.png', alt='Football')
+					li.Playstation(areatags='')
+						| Playstation (Bellandur)
+						span
+							img(src=cdn + 'images/badminton-menu.png', alt='Badminton')
+						span
+							img(src=cdn + 'images/tt-menu.png', alt='Table Tennis')
+					li.Prettysports(areatags='chinnappanahalli,brookefield')
+						| Pretty sports (Marthahalli)
+						span
+							img(src=cdn + 'images/football-menu.png', alt='Football')
+					li.Dreamsports(areatags='inorbit,rooftop')
+						| Dream Fields Sports (Whitefield)
+						span
+							img(src=cdn + 'images/football-menu.png', alt='Football')
+						span
+							img(src=cdn + 'images/cricket-menu.png', alt='cricket')
+					li.Decathlon(areatags='')
+						| Decathlon (Whitefield)
+						span
+							img(src=cdn + 'images/football-menu.png', alt='Football')
+						span
+							img(src=cdn + 'images/cricket-menu.png', alt='Cricket')
+					li.Sptsports(areatags='')
+						| SPT Sports (Sarjapur Road)
+						span
+							img(src=cdn + 'images/football-menu.png', alt='Football')
+						span
+							img(src=cdn + 'images/cricket-menu.png', alt='Cricket')
+					li.Tams(areatags='siddhapura')
+						| TAMS (Marthahalli)
+						span
+							img(src=cdn + 'images/tennis-menu.png', alt='Tennis')
+					li.Truebounce(areatags='')
+						| True Bounce (Marthahalli)
+						span
+							img(src=cdn + 'images/tennis-menu.png', alt='Tennis')
+					li.Noahtennis(areatags='Doddanekundi')
+						| Noah Sports (Whitefield)
+						span
+							img(src=cdn + 'images/tennis-menu.png', alt='Tennis')
+		.groundName.mobile
+			.groundInfo
+				h1(ng-click='centerOnGround()') {{ground.name}}
+				p {{ground.area}}
+				p
+					a#linkImage.map-photo(href='#', ng-click='showMap()')
+						img(ng-src="{{!showLocation && 'images/route.png' || showLocation&& 'images/shutter.png'}}", alt='location')
+						| {{link}}
+		.ground.cover
+		.mapContent.mapArea
+			#map-canvas(style='width: 100%; height: 100%')
+		.ground.contentWrap
+			.leftPanel.mobile
+				span.bookField
+					| For booking or enquiries
+					br
+					b +91 9999 999 999
+				ul.ameneties
+					li.heading FACILITIES AVAILABLE
+					li(ng-repeat='amenity in ground.amenities track by $index')
+						img(ng-src="{{\
+						amenity === 'Parking' && 'images/carParking.png' ||\
+						amenity === 'Water' && 'images/waterFacility.png' ||\
+						amenity === 'Washroom' && 'images/washroom.png' ||\
+						amenity === 'Training Bib' && 'images/bib.png' ||\
+						amenity === 'Refresh Bar' && 'images/snackBar.png' ||\
+						amenity === 'Locker' && 'images/locker.png' ||\
+						amenity === 'Coach (On request)' && 'images/coach.png' ||\
+						amenity === 'Stands' && 'images/stands.png'\
+						}}")
+						span {{amenity}}
+			.rightPanel.mobile
+				ul.availableSports
+					li(ng-repeat='sport in ground.sports track by $index', ng-class="{'active': $index === selectedSportIndex}", ng-click='changeSport($index)')
+						img(ng-src="{{\
+						sport == 'Football' && 'images/football-menu.png' ||\
+						sport == 'Tennis' && 'images/tennis-menu.png' ||\
+						sport == 'Badminton' && 'images/badminton-menu.png' ||\
+						sport == 'Table Tennis' && 'images/tt-menu.png' ||\
+						sport == 'Swimming' && 'images/swimming-menu.png' ||\
+						sport == 'Pool' && 'images/pool-menu.png' ||\
+						sport == 'Mini Cricket' && 'images/cricket-menu.png' ||\
+						sport == 'Cricket' && 'images/cricket-menu.png' ||\
+						sport == 'Volleyball' && 'images/favicon.png' ||\
+						sport == 'Throwball' && 'images/favicon.png'\
+						}}")
+						span {{sport}}
+				.sportDetails
+					h1
+						small.active(ng-repeat='turf in turfs track by $index', ng-click='changeTurf($index)') {{turf.surface}}
+					.my-gallery.mobile(itemscope='', itemtype='http://schema.org/ImageGallery')
+						figure(ng-repeat='index in selectedTurf.images')
+							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg', itemprop='contentUrl')
+								img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
+						figure.seeMore(ng-if='selectedTurf.hasMoreImages')
+							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{selectedTurf.seeMoreImage}}.jpg', itemprop='contentUrl')
+								img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{selectedTurf.seeMoreImage}}.jpg', alt='Image description')
+								span +
+						figure.hide(ng-repeat='index in selectedTurf.extraImages')
+							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg', itemprop='contentUrl')
+								img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
+					ul.upperCategory
+						li
+							h3 Court Details
+							ul.groundDetails
+								li
+									div
+										span Coaching
+										span {{selectedTurf.coaching || 'No'}}
+								li
+									div
+										span Surface
+										span {{selectedTurf.surface || 'Standard'}}
+								li
+									div
+										span Size
+										span {{selectedTurf.size || 'Standard'}}
+						li
+							h3 Booking Charges
+							table(cellpadding='0', cellspacing='0')
+								tbody
+									tr
+										th DAY
+										th TIMINGS
+										th HOURLY RATE
+									tr(ng-repeat='timingAndRate in timingsAndRates track by $index')
+										td(ng-class="{'even': $index % 2 == 0}") {{timingAndRate.day}}
+										td(colspan='2', ng-class="{'even': $index % 2 == 0}")
+											table(style='width:100%;')
+												tr(ng-repeat='finalRate in timingAndRate.finalRates track by $index', ng-class="{'border-bottom': $index != timingAndRate.finalRates.length - 1}")
+													td(width='50%') {{finalRate.timing}}
+													td(width='50%') {{finalRate.rate}}
+			.leftPanel.mobileOnly.mobile
+				ul.ameneties
+					li.heading FACILITIES AVAILABLE
+					li(ng-repeat='amenity in ground.amenities track by $index')
+						img(ng-src="{{\
+						amenity === 'Parking' && 'images/carParking.png' ||\
+						amenity === 'Water' && 'images/waterFacility.png' ||\
+						amenity === 'Washroom' && 'images/washroom.png' ||\
+						amenity === 'Training Bib' && 'images/bib.png' ||\
+						amenity === 'Refresh Bar' && 'images/snackBar.png' ||\
+						amenity === 'Locker' && 'images/locker.png' ||\
+						amenity === 'Coach (On request)' && 'images/coach.png' ||\
+						amenity === 'Stands' && 'images/stands.png'\
+						}}")
+						span {{amenity}}
+				span.bookField
+					| For booking or enquiries
+					br
+					b +91 9742 718 766
+			// Root element of PhotoSwipe. Must have class pswp.
+			.pswp(tabindex='-1', role='dialog', aria-hidden='true')
+				//
+					Background of PhotoSwipe.
+					It's a separate element, as animating opacity is faster than rgba().
+				.pswp__bg
+				// Slides wrapper with overflow:hidden.
+				.pswp__scroll-wrap
+					// Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory.
+					// don't modify these 3 pswp__item elements, data is added later on.
+					.pswp__container
+						.pswp__item
+						.pswp__item
+						.pswp__item
+					// Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
+					.pswp__ui.pswp__ui--hidden
+						.pswp__top-bar
+							// Controls are self-explanatory. Order can be changed.
+							.pswp__counter
+							button.pswp__button.pswp__button--close(title='Close (Esc)')
+							button.pswp__button.pswp__button--share(title='Share')
+							button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
+							button.pswp__button.pswp__button--zoom(title='Zoom in/out')
+							// Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR
+							// element will get class pswp__preloader--active when preloader is running
+							.pswp__preloader
+								.pswp__preloader__icn
+									.pswp__preloader__cut
+										.pswp__preloader__donut
+						.pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+							.pswp__share-tooltip
+						button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
+						button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
+						.pswp__caption
+							.pswp__caption__center
+			br
+			br
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+		script(src='//photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe.min.js')
+		script(src='//photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe-ui-default.min.js')
+		script(src=cdn + 'lib/jquery.transit.min.js')
+		script(src=cdn + 'scripts/index.js')
+		script(src=cdn + 'scripts/ground.js')
+		script(src='//maps.googleapis.com/maps/api/js')

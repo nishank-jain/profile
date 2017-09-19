@@ -25,7 +25,7 @@ var groundSchema = new Schema({
 });
 
 // Ground Model
-var Ground = mongoose.model('parent_grounds', groundSchema);
+var Grounds = mongoose.model('parent_grounds', groundSchema);
 
 // Make this available to our users in our Node applications
-module.exports = Ground;
+module.exports = Grounds;
