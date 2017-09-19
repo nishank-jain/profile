@@ -1,4 +1,5 @@
 var Grounds = require('../models/grounds');
+var Courts = require('../models/courts');
 
 function list(req, callback) {
 	Grounds.find({}, function(err, grounds) {
@@ -9,9 +10,17 @@ function list(req, callback) {
 
 function detail(req, callback) {
 	var slug = req.params.groundSlug;
-	Grounds.find({"slug": slug}, function(err, ground) {
+	Grounds.findOne({"slug": slug}, function(err, ground) {
 		if (err) throw err;
-		callback(err, ground[0]);
+		var ground_id = ground._id;
+		Courts.find({'parent_ground_id': ground_id}, function (err, courts) {
+			if (err) throw err;
+			var result = {
+				ground: ground,
+				courts: courts
+			};
+			callback(err, result);
+		});
 	});
 }
 

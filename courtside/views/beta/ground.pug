@@ -117,16 +117,16 @@ html
 				.sportDetails
 					h1
 						small.active(ng-repeat='turf in turfs track by $index', ng-click='changeTurf($index)') {{turf.surface}}
-					.my-gallery.mobile(itemscope='', itemtype='http://schema.org/ImageGallery')
+					.my-gallery.mobile
 						figure(ng-repeat='index in selectedTurf.images')
-							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg', itemprop='contentUrl')
+							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg')
 								img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
 						figure.seeMore(ng-if='selectedTurf.hasMoreImages')
-							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{selectedTurf.seeMoreImage}}.jpg', itemprop='contentUrl')
+							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{selectedTurf.seeMoreImage}}.jpg')
 								img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{selectedTurf.seeMoreImage}}.jpg', alt='Image description')
 								span +
 						figure.hide(ng-repeat='index in selectedTurf.extraImages')
-							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg', itemprop='contentUrl')
+							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg')
 								img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
 					ul.upperCategory
 						li
@@ -162,22 +162,14 @@ html
 			.leftPanel.mobileOnly.mobile
 				ul.ameneties
 					li.heading FACILITIES AVAILABLE
-					li(ng-repeat='amenity in ground.amenities track by $index')
-						img(ng-src="{{\
-						amenity === 'Parking' && 'images/carParking.png' ||\
-						amenity === 'Water' && 'images/waterFacility.png' ||\
-						amenity === 'Washroom' && 'images/washroom.png' ||\
-						amenity === 'Training Bib' && 'images/bib.png' ||\
-						amenity === 'Refresh Bar' && 'images/snackBar.png' ||\
-						amenity === 'Locker' && 'images/locker.png' ||\
-						amenity === 'Coach (On request)' && 'images/coach.png' ||\
-						amenity === 'Stands' && 'images/stands.png'\
-						}}")
-						span {{amenity}}
+					each amenity in ground.amenities.split(',')
+						li
+							img(src=cdn + "images/amenities/" + amenity.replace(/ /g, '').toLowerCase() + '.png')
+							span #{amenity}
 				span.bookField
 					| For booking or enquiries
 					br
-					b +91 9742 718 766
+					b +91 9999 999 999
 			// Root element of PhotoSwipe. Must have class pswp.
 			.pswp(tabindex='-1', role='dialog', aria-hidden='true')
 				//

@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
 
 // Ground page
 router.get('/:groundSlug', function(req, res) {
-	groundsController.detail(req, function(err, ground) {
+	groundsController.detail(req, function(err, result) {
 		if (err) {
 			res.send(err);
 			return;
@@ -30,7 +30,8 @@ router.get('/:groundSlug', function(req, res) {
 			title: "Courtside - Book sports facilities in Bangalore",
 			description: "Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you.",
 			topbar: false,
-			ground: ground
+			ground: result.ground,
+			courts: result.courts
 		});
 	});
 });
