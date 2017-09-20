@@ -154,8 +154,8 @@ var style = [{"featureType":"water","elementType":"geometry","stylers":[{"color"
 function initMap () {
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: lat, lng: lng},
-        zoom: 15,
-        styles: style
+        zoom: 15
+        // styles: style
     });
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(lat, lng),

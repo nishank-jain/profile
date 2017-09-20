@@ -956,7 +956,7 @@ ul.search-results.mobile.enable{
 	text-align:center;
 	white-space:nowrap;
 }
-.fixed-menu span.logo-fixed {
+.fixed-menu a.logo-fixed {
 	padding:10px 0px;
 	display:inline-block;
 	margin:auto;
@@ -965,7 +965,7 @@ ul.search-results.mobile.enable{
 	overflow:hidden;
 	vertical-align:middle;
 }
-.fixed-menu span.logo-fixed img{
+.fixed-menu a.logo-fixed img{
 	height:25px;
 	width:128px;
 }

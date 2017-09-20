@@ -13,7 +13,7 @@ html
 	body.pushmenu-push
 		.fixed-menu.ground.mobile
 			div(style='width:100%;max-width:1000px;position:relative;text-align:left;margin:auto')
-				span.logo-fixed.groundPage(style='width:128px;', onclick="window.open('/','_self');")
+				a.logo-fixed.groundPage(style='width:128px;' href=".")
 					img.logo(src=cdn + 'images/logo.png', alt='Courtside')
 				input.groundQuery(placeholder='Search for ground, sport or location', name='groundQuery', type='text')
 				ul.search-results.mobile
@@ -113,58 +113,34 @@ html
 						li
 							img(src=cdn + "images/sports/" + sport.slug + '.png')
 							span #{sport.name}
-					//- li(ng-repeat='sport in ground.sports track by $index', ng-class="{'active': $index === selectedSportIndex}", ng-click='changeSport($index)')
-				.sportDetails
-					//- h1
-						small.active(ng-repeat='turf in turfs track by $index', ng-click='changeTurf($index)') {{turf.surface}}
-					each sport in ground.sports
+				each sport in ground.sports
+					.sportDetails
 						.my-gallery.mobile
-							each image in ground.images[sport.slug]
-								figure
-									a(href=cdn + 'images/arenas/' + ground._id + '/' + sport.slug + '/' + image)
-										img(src=cdn + 'images/arenas/' + ground._id + '/' + sport.slug + '/thumbs/' + image)
-					//- .my-gallery.mobile
-					//- 	figure(ng-repeat='index in selectedTurf.images')
-					//- 		a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg')
-					//- 			img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
-					//- 	figure.seeMore(ng-if='selectedTurf.hasMoreImages')
-					//- 		a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{selectedTurf.seeMoreImage}}.jpg')
-					//- 			img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{selectedTurf.seeMoreImage}}.jpg', alt='Image description')
-					//- 			span +
-					//- 	figure.hide(ng-repeat='index in selectedTurf.extraImages')
-					//- 		a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg')
-					//- 			img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
-					ul.upperCategory
-						li
-							h3 Court Details
-							ul.groundDetails
-								li
-									div
-										span Coaching
-										span {{selectedTurf.coaching || 'No'}}
-								li
-									div
-										span Surface
-										span {{selectedTurf.surface || 'Standard'}}
-								li
-									div
-										span Size
-										span {{selectedTurf.size || 'Standard'}}
-						li
-							h3 Booking Charges
-							table(cellpadding='0', cellspacing='0')
-								tbody
-									tr
-										th DAY
-										th TIMINGS
-										th HOURLY RATE
-									tr(ng-repeat='timingAndRate in timingsAndRates track by $index')
-										td(ng-class="{'even': $index % 2 == 0}") {{timingAndRate.day}}
-										td(colspan='2', ng-class="{'even': $index % 2 == 0}")
-											table(style='width:100%;')
-												tr(ng-repeat='finalRate in timingAndRate.finalRates track by $index', ng-class="{'border-bottom': $index != timingAndRate.finalRates.length - 1}")
-													td(width='50%') {{finalRate.timing}}
-													td(width='50%') {{finalRate.rate}}
+							if ground.images[sport.slug]
+								each image in ground.images[sport.slug]
+									figure
+										a(href=cdn + 'images/arenas/' + ground._id + '/' + sport.slug + '/' + image)
+											img(src=cdn + 'images/arenas/' + ground._id + '/' + sport.slug + '/thumbs/' + image)
+						ul.upperCategory
+							li
+								h3 Booking Charges
+								each surface, surfaceName in ground.pricing[sport.name]
+									p #{surfaceName}
+									table(cellpadding='0', cellspacing='0')
+										tbody
+											tr
+												th DAY
+												th TIMINGS
+												th HOURLY RATE
+											each day, dayName in surface
+												tr
+													td(ng-class="{'even': $index % 2 == 0}") #{dayName === 'default' ? 'everyday' : dayName}
+													td(colspan='2', ng-class="{'even': $index % 2 == 0}")
+														table(style='width:100%;')
+															each timing in day
+																tr
+																	td(width='50%') #{timing.start} to #{timing.end}
+																	td(width='50%') #{timing.rate}
 			.leftPanel.mobileOnly.mobile
 				ul.ameneties
 					li.heading FACILITIES AVAILABLE

@@ -4,16 +4,16 @@ html
 		meta(name='viewport', content='width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
 		meta(name='description', content='#{description}')
 		title #{title}
-		link(rel='shortcut icon', href='images/favicon.png', type='image/x-icon')
-		link(rel='stylesheet', href='styles/ion.rangeSlider.css')
-		link(rel='stylesheet', href='styles/ion.rangeSlider.skinNice.css')
-		link(rel='stylesheet', type='text/css', href='styles/all.css')
+		link(rel='shortcut icon', href=cdn + 'images/favicon.png', type='image/x-icon')
+		link(rel='stylesheet', href=cdn + 'styles/ion.rangeSlider.css')
+		link(rel='stylesheet', href=cdn + 'styles/ion.rangeSlider.skinNice.css')
+		link(rel='stylesheet', type='text/css', href=cdn + 'styles/all.css')
 	body.pushmenu-push
 		.fixed-menu.mobile
 			span.phoneNumber
 				img(src=cdn + 'images/contact-wapp.png', style='height:25px;display:inline-block;margin-right:0px;margin-left:-5px;vertical-align:middle;', alt='wapp')
 				|  +91 9999 999 999
-			span.logo-fixed(onclick='scrollToTop()')
+			a.logo-fixed(onclick='scrollToTop()')
 				img.logo(src=cdn + 'images/logo.png', alt='Courtside')
 			ul
 				a(href='#howItWorks')
@@ -208,15 +208,18 @@ html
 							| Swimming
 							span.underline
 				li.menuItem
-					.active(sportsearch='tabletennis')
+					.active(sportsearch='table_tennis')
 						h1
 							| Table Tennis 
 							span.underline
 			ul.clr.categories
 				each ground in grounds
 					if ground.city === 'Bengaluru'
+						-availableSports = []
+						each sport in ground.sports
+							-availableSports.push(sport.slug)
 						li
-							.ground-tile(sports=ground.sports.join(',').replace(/ /g, '').toLowerCase())
+							.ground-tile(sports=availableSports.join(','))
 								a(href=betaUrl + ground.slug)
 									img(src=cdn + 'images/arenas/' + ground._id + '/cover.jpg')
 									h1.small #{ground.name}
@@ -252,6 +255,6 @@ html
 					| An initiative by   
 					b Courtside Sports Technologies Pvt. Ltd.
 		script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
-		script(src='lib/jquery.transit.min.js')
-		script(src='lib/ion.rangeSlider.min.js')
-		script(src='scripts/all.js')
+		script(src=cdn + 'lib/jquery.transit.min.js')
+		script(src=cdn + 'lib/ion.rangeSlider.min.js')
+		script(src=cdn + 'scripts/all.js')
