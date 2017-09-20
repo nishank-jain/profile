@@ -22,7 +22,7 @@ html
 						span
 							img(src=cdn + 'images/sports/cricket.png', alt='Cricket')
 						span
-							img(src=cdn + 'images/sports/tabletennis.png', alt='Table Tennis')
+							img(src=cdn + 'images/sports/table_tennis.png', alt='Table Tennis')
 						span
 							img(src=cdn + 'images/sports/tennis.png', alt='Tennis')
 						span
@@ -32,7 +32,7 @@ html
 						span
 							img(src=cdn + 'images/sports/swimming.png', alt='Swimming')
 						span
-							img(src=cdn + 'images/sports/tabletennis.png', alt='Table Tennis')
+							img(src=cdn + 'images/sports/table_tennis.png', alt='Table Tennis')
 						span
 							img(src=cdn + 'images/sports/football.png', alt='Football')
 						span
@@ -48,7 +48,7 @@ html
 						span
 							img(src=cdn + 'images/sports/badminton.png', alt='Badminton')
 						span
-							img(src=cdn + 'images/sports/tabletennis.png', alt='Table Tennis')
+							img(src=cdn + 'images/sports/table_tennis.png', alt='Table Tennis')
 					li.Prettysports(areatags='chinnappanahalli,brookefield')
 						| Pretty sports (Marthahalli)
 						span
@@ -111,23 +111,29 @@ html
 				ul.availableSports
 					each sport in ground.sports
 						li
-							img(src=cdn + "images/sports/" + sport.replace(/ /g, '').toLowerCase() + '.png')
-							span #{sport}
+							img(src=cdn + "images/sports/" + sport.slug + '.png')
+							span #{sport.name}
 					//- li(ng-repeat='sport in ground.sports track by $index', ng-class="{'active': $index === selectedSportIndex}", ng-click='changeSport($index)')
 				.sportDetails
-					h1
+					//- h1
 						small.active(ng-repeat='turf in turfs track by $index', ng-click='changeTurf($index)') {{turf.surface}}
-					.my-gallery.mobile
-						figure(ng-repeat='index in selectedTurf.images')
-							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg')
-								img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
-						figure.seeMore(ng-if='selectedTurf.hasMoreImages')
-							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{selectedTurf.seeMoreImage}}.jpg')
-								img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{selectedTurf.seeMoreImage}}.jpg', alt='Image description')
-								span +
-						figure.hide(ng-repeat='index in selectedTurf.extraImages')
-							a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg')
-								img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
+					each sport in ground.sports
+						.my-gallery.mobile
+							each image in ground.images[sport.slug]
+								figure
+									a(href=cdn + 'images/arenas/' + ground._id + '/' + sport.slug + '/' + image)
+										img(src=cdn + 'images/arenas/' + ground._id + '/' + sport.slug + '/thumbs/' + image)
+					//- .my-gallery.mobile
+					//- 	figure(ng-repeat='index in selectedTurf.images')
+					//- 		a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg')
+					//- 			img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
+					//- 	figure.seeMore(ng-if='selectedTurf.hasMoreImages')
+					//- 		a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{selectedTurf.seeMoreImage}}.jpg')
+					//- 			img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{selectedTurf.seeMoreImage}}.jpg', alt='Image description')
+					//- 			span +
+					//- 	figure.hide(ng-repeat='index in selectedTurf.extraImages')
+					//- 		a(ng-href='images/{{ground.id}}/{{selectedTurf.id}}/img/{{index}}.jpg')
+					//- 			img(ng-src=cdn + 'images/{{ground.id}}/{{selectedTurf.id}}/thumb/{{index}}.jpg', alt='Image description')
 					ul.upperCategory
 						li
 							h3 Court Details

@@ -6,7 +6,7 @@ var groundSchema = new Schema({
 	name: String,
 	area: String,
 	latlong: String,
-	sports: [String],
+	sports: Schema.Types.Mixed,
 	isRegistered: Boolean,
 	phoneNumber: Number,
 	owner: String,
@@ -18,7 +18,8 @@ var groundSchema = new Schema({
 	city: String,
 	call_only: Boolean,
 	book_only: Boolean,
-	slug: String
+	slug: String,
+	images: Schema.Types.Mixed
 },
 {
 	timestamps: true
