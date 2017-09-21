@@ -78,10 +78,10 @@ $(document).ready(function() {
 	}
 	setTimeout( function(){ 
 		$('.addWhiteSpace:not(.enable)').css("height","360px");
- 	}  , 2000 );
+	}  , 2000 );
 	setTimeout( function(){ 
 		$('.addWhiteSpace.enable').css("height","auto");
- 	}  , 2000 );
+	}  , 2000 );
 	adjustScreenFit();
 	//adjustSecondSection();
 });
@@ -420,7 +420,7 @@ $('ul.dropdown-this').focus(function(){
 		if (e.keyCode == 40) { 
 			e.stopImmediatePropagation();
 			if($(this).children('li.fakeHover').length > 0 ){
-		   		var makeActive = $(this).children('li.fakeHover').next();
+				var makeActive = $(this).children('li.fakeHover').next();
 			} else {
 				var makeActive = $(this).children('li.active').next();
 			}
@@ -459,7 +459,7 @@ $('ul.dropdown-area').focus(function(){
 		if (e.keyCode == 40) { 
 		e.stopImmediatePropagation();
 			if($(this).children('li.fakeHover').length > 0 ){
-		   		var makeActive = $(this).children('li.fakeHover').next();
+				var makeActive = $(this).children('li.fakeHover').next();
 			} else {
 				var makeActive = $(this).children('li.active').next();
 			}
@@ -613,25 +613,25 @@ $(document).on('click','#subscribeSubmit:not(.disable)',function(e){
 		$('.email-right input').addClass('disable');
 		$('.email-right input').attr('disabled','');
 		var requestObject = {
-            name: $("input.name-touch").val(),
-            email: $("input.emailId-touch").val()
-        };
-		$.ajax({
-            url: "userRequest.do?action=addInfo",
-            type: 'POST',
-            data: requestObject,
-            headers : {
-                "Content-Type" : "application/x-www-form-urlencoded"
-            },
-            success: function (response) {
-				$('#subscribeSubmit').text('Thank you!');
-            },
-            error: function () {
-				$('#subscribeSubmit').text('Error. Try again');
-				$('#subscribeSubmit').removeClass('disable');
-				$('.email-right input').removeAttr('disabled');
-			}
-        });
+			name: $("input.name-touch").val(),
+			email: $("input.emailId-touch").val()
+		};
+		// $.ajax({
+  //           url: "userRequest.do?action=addInfo",
+  //           type: 'POST',
+  //           data: requestObject,
+  //           headers : {
+  //               "Content-Type" : "application/x-www-form-urlencoded"
+  //           },
+  //           success: function (response) {
+		// 		$('#subscribeSubmit').text('Thank you!');
+  //           },
+  //           error: function () {
+		// 		$('#subscribeSubmit').text('Error. Try again');
+		// 		$('#subscribeSubmit').removeClass('disable');
+		// 		$('.email-right input').removeAttr('disabled');
+		// 	}
+  //       });
 	}
 });
 $(document).on('click','#tournamentRegist:not(.sending):not(.success)',function(e){
@@ -686,49 +686,49 @@ $(document).on('click','#tournamentRegist:not(.sending):not(.success)',function(
 	}
 
 	if(isEverythingFine){
-        var year = parseInt($(".dropdown-date li.active").attr("value").split(",")[0]);
-        var month = parseInt($(".dropdown-date li.active").attr("value").split(",")[1]);
-        var day = parseInt($(".dropdown-date li.active").attr("value").split(",")[2]);
-        var requestObject = {
-            name: $("input.teamName").val(),
-            phone: $("input.phoneNumber").val(),
-            email: $("input.emailId").val(),
-            sport: $(".dropdown-active li.active").attr("value"),
-            play_time_start: new Date(year, month, day, parseInt($("#rangeValues").val().split("-")[0])).getTime(),
-            play_time_end: new Date(year, month, day, parseInt($("#rangeValues").val().split("-")[1])).getTime(),
-            duration: $(".dropdown-duration li.active").attr("value"),
-            channel: "Web",
-            area: areas,
-            no_of_courts: $(".dropdown-courts li.active").attr("value")
-        };
-        // $.post("https://54.169.157.178:8443/sportinize/userRequest.do?action=add", requestObject, function(response) {
-        //     console.log(response);
-        // });
-        //console.log(requestObject);
+		var year = parseInt($(".dropdown-date li.active").attr("value").split(",")[0]);
+		var month = parseInt($(".dropdown-date li.active").attr("value").split(",")[1]);
+		var day = parseInt($(".dropdown-date li.active").attr("value").split(",")[2]);
+		var requestObject = {
+			name: $("input.teamName").val(),
+			phone: $("input.phoneNumber").val(),
+			email: $("input.emailId").val(),
+			sport: $(".dropdown-active li.active").attr("value"),
+			play_time_start: new Date(year, month, day, parseInt($("#rangeValues").val().split("-")[0])).getTime(),
+			play_time_end: new Date(year, month, day, parseInt($("#rangeValues").val().split("-")[1])).getTime(),
+			duration: $(".dropdown-duration li.active").attr("value"),
+			channel: "Web",
+			area: areas,
+			no_of_courts: $(".dropdown-courts li.active").attr("value")
+		};
+		// $.post("https://54.169.157.178:8443/sportinize/userRequest.do?action=add", requestObject, function(response) {
+		//     console.log(response);
+		// });
+		//console.log(requestObject);
 		$('.submitButton').addClass('sending');
 		$('.sendStatuscover').removeClass('hide');
 		$('.submitButton').text('Sending Request');
 
-        $.ajax({
-            url: "userRequest.do?action=add",
-            type: 'POST',
-            data: requestObject,
-            headers : {
-                "Content-Type" : "application/x-www-form-urlencoded"
-            },
-            success: function (response) {
-				$('.submitButton').removeClass('sending');
-				$('.submitButton').addClass('success');
-				$('.submitButton').text(' ');
-				$('.successMsg').addClass('success');
-            },
-            error: function () {
-				$('.submitButton').removeClass('sending');
-				$('.sendStatuscover').addClass('hide');
-				$('.submitButton').text('Send again');
-				$(".errorMsg").html("<ol><li style='color:#cd2733'>Message sending failed. Try sending us again.</li></ol>");
-			},
-        });
+		// $.ajax({
+		// 	url: "userRequest.do?action=add",
+		// 	type: 'POST',
+		// 	data: requestObject,
+		// 	headers : {
+		// 		"Content-Type" : "application/x-www-form-urlencoded"
+		// 	},
+		// 	success: function (response) {
+		// 		$('.submitButton').removeClass('sending');
+		// 		$('.submitButton').addClass('success');
+		// 		$('.submitButton').text(' ');
+		// 		$('.successMsg').addClass('success');
+		// 	},
+		// 	error: function () {
+		// 		$('.submitButton').removeClass('sending');
+		// 		$('.sendStatuscover').addClass('hide');
+		// 		$('.submitButton').text('Send again');
+		// 		$(".errorMsg").html("<ol><li style='color:#cd2733'>Message sending failed. Try sending us again.</li></ol>");
+		// 	},
+		// });
 		
 	} else {
 		
@@ -825,7 +825,7 @@ $(document).on('click',".tournamentList>li:not(.tournamentForm)",function(e){
 				src: 'images/'+$(this).attr("tournamentId")+'.jpg',
 				title: $(this).children(".tournDetails").children("h1").text()+", "+$(this).children(".tournDetails").children(".tournDetailList").children("li:first-child").text(),
 				w: parseInt(size[0], 10),
-                h: parseInt(size[1], 10)
+				h: parseInt(size[1], 10)
 			};
 			items.push(insideItmes);
 	});
@@ -845,14 +845,14 @@ $(document).on('click',".tournamentList>li:not(.tournamentForm)",function(e){
 
 // Cache selectors
 var topMenu = $(".fixed-menu"),
-    topMenuHeight = topMenu.outerHeight()+15,
-    // All list items
-    menuItems = topMenu.find("a"),
-    // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function(){
-      var item = $($(this).attr("href"));
-      if (item.length) { return item; }
-    });
+	topMenuHeight = topMenu.outerHeight()+15,
+	// All list items
+	menuItems = topMenu.find("a"),
+	// Anchors corresponding to menu items
+	scrollItems = menuItems.map(function(){
+	  var item = $($(this).attr("href"));
+	  if (item.length) { return item; }
+	});
 
 /*
 var isValueFromTop = false;
@@ -891,7 +891,7 @@ $(window).scroll(function(){
    // Get id of current scroll item
    var cur = scrollItems.map(function(){
    if ($(this).offset().top < fromTop)
-       return this;
+	   return this;
    });
    // Get the id of the current element
    cur = cur[cur.length-1];
@@ -913,12 +913,12 @@ $(window).scroll(function(){
 			filterVal = 0;
 		}
 		$('.cell').css({
-                            'filter': 'blur('+filterVal+'px)',
-                            '-webkit-filter': 'blur('+filterVal+'px)',
-                            '-moz-filter': 'blur('+filterVal+'px)',
-                            '-o-filter': 'blur('+filterVal+'px)',
-                            '-ms-filter': 'blur('+filterVal+'px)'
-                        });
+							'filter': 'blur('+filterVal+'px)',
+							'-webkit-filter': 'blur('+filterVal+'px)',
+							'-moz-filter': 'blur('+filterVal+'px)',
+							'-o-filter': 'blur('+filterVal+'px)',
+							'-ms-filter': 'blur('+filterVal+'px)'
+						});
 	} else if ($(window).scrollTop() > scrollValTopEnd && isValueFromTop){
 		$('.howitworks-wrapper').removeClass('fixed');
 		$('.howitworks-wrapper').removeClass('pre-scroll');
@@ -941,10 +941,10 @@ $(window).scroll(function(){
 				});
 	}
 	*/
-       // Set/remove active class
-       menuItems
-         .children().removeClass("active")
-         .end().filter("[href=#"+id+"]").children().addClass("active");
+	   // Set/remove active class
+	   menuItems
+		 .children().removeClass("active")
+		 .end().filter("[href=#"+id+"]").children().addClass("active");
 });
 
 $( window ).scroll(function() {
@@ -998,9 +998,9 @@ $('#whatsappClick').click(function(){
 	}
 });
 $("#emailForm").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#requestForm").offset().top - 50
-    }, 500);
+	$('html, body').animate({
+		scrollTop: $("#requestForm").offset().top - 50
+	}, 500);
 });
 $(document).on("click",".contactOptions li:not('#callExternal'):not('#emailForm'):not('#facebookClick')",function(e){
 	var attr = $(this).attr('openTab');
@@ -1009,8 +1009,8 @@ $(document).on("click",".contactOptions li:not('#callExternal'):not('#emailForm'
 	$(this).children('.pulse').clearQueue().transition({ rotate: 135});
 	$(this).children('.arrow-right').clearQueue().transition({ marginLeft: 10},200);
 	if (typeof attr !== typeof undefined && attr !== false) {
-   		$(".cell.cell-2").hide();
-   		$(".cell.cell-3").hide();
+		$(".cell.cell-2").hide();
+		$(".cell.cell-3").hide();
 		$(".cell.biggerCell").addClass("hide");
 		$("#"+attr).removeClass("hide");
 		$(this).addClass("active");
@@ -1022,6 +1022,6 @@ $(document).on("click",".closeButton, .contactOptions li.active",function(e){
 	$('.contactOptions li').children('.pulse:not(.active)').clearQueue().transition({ rotate: -45});
 	$('.contactOptions li').children('.arrow-right').clearQueue().transition({ marginLeft: 5},200);
 	$(".cell.cell-2").show();
-   	$(".cell.cell-3").show();
+	$(".cell.cell-3").show();
 	$(".cell.biggerCell").addClass("hide");
 });

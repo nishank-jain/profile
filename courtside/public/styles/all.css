@@ -2700,7 +2700,7 @@ GROUND PAGE
 .ground.contentWrap .rightPanel .sportDetails ul.upperCategory h3 {
 	font-family:SansRg;
 	font-size:14px;	
-	padding:10px;
+	padding:10px 0;
 	color:#6296b6;
 	margin:0px;
 	margin-top:20px;
@@ -2753,6 +2753,10 @@ GROUND PAGE
 }
 .ground.contentWrap .rightPanel .sportDetails ul.upperCategory li table tr.border-bottom {
 	border-bottom:1px solid #ddd;	
+}
+
+.dayName {
+	text-transform: capitalize;
 }
 
 input.groundQuery {

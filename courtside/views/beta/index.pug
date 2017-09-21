@@ -230,9 +230,9 @@ html
 					small Like what you see? Subscribe to our updates
 					span.underline.hide(style='border-color:#fff;margin:10px 20px 10px 0px;width:auto;')
 					br
-					input.mediumLength.name-touch(placeholder='Name', value='', name='fullName')
-					input.mediumLength.emailId-touch(placeholder='Your email address', value='')
-					button#subscribeSubmit.main-cta Submit
+					input.mediumLength.name-touch(placeholder='Name', value='', name='fullName' disabled)
+					input.mediumLength.emailId-touch(placeholder='Your email address', value='' disabled)
+					button#subscribeSubmit.main-cta(disabled) Submit
 				.email-left
 					img.zombie.hide(src=cdn + 'images/zombie.png', alt='zombie')
 					small
