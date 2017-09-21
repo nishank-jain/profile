@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
-	app.locals.cdn = "https://d14x7hkpd082ov.cloudfront.net";
+	app.locals.cdn = "https://d14x7hkpd082ov.cloudfront.net/courtside";
 }
 else {
 	app.locals.cdn = "/courtside";
