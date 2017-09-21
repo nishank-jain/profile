@@ -24,8 +24,10 @@ if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
 	app.locals.cdn = "https://d14x7hkpd082ov.cloudfront.net";
 }
 else {
-	app.locals.cdn = "/courtside/";
+	app.locals.cdn = "/courtside";
 }
+
+app.locals.assets = "/courtside";
 
 app.locals.betaUrl = "/courtside/beta/";
 

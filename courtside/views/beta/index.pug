@@ -4,17 +4,17 @@ html
 		meta(name='viewport', content='width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
 		meta(name='description', content='#{description}')
 		title #{title}
-		link(rel='shortcut icon', href=cdn + 'images/favicon.png', type='image/x-icon')
-		link(rel='stylesheet', href=cdn + 'styles/ion.rangeSlider.css')
-		link(rel='stylesheet', href=cdn + 'styles/ion.rangeSlider.skinNice.css')
-		link(rel='stylesheet', type='text/css', href=cdn + 'styles/all.css')
+		link(rel='shortcut icon', href=assets + '/images/favicon.png', type='image/x-icon')
+		link(rel='stylesheet', href=assets + '/styles/ion.rangeSlider.css')
+		link(rel='stylesheet', href=assets + '/styles/ion.rangeSlider.skinNice.css')
+		link(rel='stylesheet', type='text/css', href=assets + '/styles/all.css')
 	body.pushmenu-push
 		.fixed-menu.mobile
 			span.phoneNumber
-				img(src=cdn + 'images/contact-wapp.png', style='height:25px;display:inline-block;margin-right:0px;margin-left:-5px;vertical-align:middle;', alt='wapp')
+				img(src=cdn + '/images/contact-wapp.png', style='height:25px;display:inline-block;margin-right:0px;margin-left:-5px;vertical-align:middle;', alt='wapp')
 				|  +91 9999 999 999
 			a.logo-fixed(href="")
-				img.logo(src=cdn + 'images/logo.png', alt='Courtside')
+				img.logo(src=cdn + '/images/logo.png', alt='Courtside')
 			ul
 				a(href='#howItWorks')
 					li How it works
@@ -27,7 +27,7 @@ html
 			span.logo-fixed
 				button.menuIcon.cmn-toggle-switch.cmn-toggle-switch__htra
 					span toggle menu
-				img.logo(src=cdn + 'images/logo.png', alt='Courtside', onclick='scrollToTop()')
+				img.logo(src=cdn + '/images/logo.png', alt='Courtside', onclick='scrollToTop()')
 		ul#mobile-menu
 			a(href='#howItWorks', tabindex='-1')
 				li How it works
@@ -37,13 +37,13 @@ html
 				li Our network
 			li(onclick="window.open('https://medium.com/@courtside_in');") Blog
 		span.phoneNumber-permanent.mobile
-			img(src=cdn + 'images/contact-call.png', style='height:55px;display:inline-block;margin-right:0px;margin-left:-2px;vertical-align:middle;margin-right:10px;', alt='wapp')
+			img(src=cdn + '/images/contact-call.png', style='height:55px;display:inline-block;margin-right:0px;margin-left:-2px;vertical-align:middle;margin-right:10px;', alt='wapp')
 			| 24x7
 		.fold.intro.mobile
 			.outer
 				.middle
 					.inner
-						img.logoOriginal(src=cdn + 'images/logooriginal.png', alt='courtside', style='width:150px;padding-bottom:80px;')
+						img.logoOriginal(src=cdn + '/images/logooriginal.png', alt='courtside', style='width:150px;padding-bottom:80px;')
 						h1.title.mobile(style='margin-bottom:0px;') Book and Play
 						span.underline.mobile(style='width:100px;margin-top:20px;margin-bottom:20px;')
 						br
@@ -59,27 +59,27 @@ html
 						span.underline.mobile.hide(style='width:120px;margin-top:0px;margin-bottom:60px;')
 						ul.contactOptions
 							li#emailForm
-								img(src=cdn + 'images/contact-email.png', alt='email', style='background:#ed6567;')
+								img(src=cdn + '/images/contact-email.png', alt='email', style='background:#ed6567;')
 								.pulse
 								| Web request
 								br
 								b Book now 
 								span.arrow-right
 							li#callExternal
-								img(src=cdn + 'images/contact-call.png', alt='call', style='background:#f39c12;')
+								img(src=cdn + '/images/contact-call.png', alt='call', style='background:#f39c12;')
 								.pulse
 								| Call us at
 								br
 								b +91 9999 999 999
 							li#whatsappClick.mobile(opentab='whatsappInfo')
-								img(src=cdn + 'images/contact-wapp.png', alt='wapp', style='background:#0f9d58;')
+								img(src=cdn + '/images/contact-wapp.png', alt='wapp', style='background:#0f9d58;')
 								.pulse
 								| Whatsapp us
 								br
 								b Know more
 								span.arrow-right
 							li#facebookClick(onclick="window.open('https://www.facebook.com/courtside.in');")
-								img(src=cdn + 'images/contact-fb.png', alt='fb', style='background:#5e75a9;')
+								img(src=cdn + '/images/contact-fb.png', alt='fb', style='background:#5e75a9;')
 								.pulse
 								| Facebook message
 								br
@@ -88,24 +88,24 @@ html
 					.cell.cell-2
 						h1(style='margin-top:0px;text-align:centre;padding:0px 20px 10px 20px;font-size:16px;')
 							| We get back to you with the available ground, and even if they are all full, we find you the closest options to choose.
-						img(src=cdn + 'images/blank-option.jpg', alt='options')
-						img(src=cdn + 'images/check-option.jpg', alt='selected option')
-						img(src=cdn + 'images/blank-option.jpg', alt='options')
+						img(src=cdn + '/images/blank-option.jpg', alt='options')
+						img(src=cdn + '/images/check-option.jpg', alt='selected option')
+						img(src=cdn + '/images/blank-option.jpg', alt='options')
 					.cell.cell-3
 						h1(style='margin-top:0px;text-align:centre;padding:0px 20px 10px 20px;font-size:16px;') You give us a go ahead to confirm your booking, and pay directly to the ground.
-						img(src=cdn + 'images/mail-confirmation.png', alt='email')
+						img(src=cdn + '/images/mail-confirmation.png', alt='email')
 						h1(style='margin-top:0px;padding:20px 20px 0px 20px;font-size:14px;') Confirmation on message and email
 					#whatsappInfo.cell.biggerCell.hide
 						span.Whatsapp-number
 							| Whatsapp us
 							br
 							| 9999999999
-						img(src=cdn + 'images/Nexus-6-demo.jpg', alt='whatsapp screen demo')
-						img(src=cdn + 'images/Nexus-6-demo-2.jpg', alt='whatsapp screen demo')
+						img(src=cdn + '/images/Nexus-6-demo.jpg', alt='whatsapp screen demo')
+						img(src=cdn + '/images/Nexus-6-demo-2.jpg', alt='whatsapp screen demo')
 						span.closeButton
 			.featureList-wrapper.hide
 				.shadow-divider.mobile
-					img(src=cdn + 'images/shadow-bottom.png', alt='shadow-bottom')
+					img(src=cdn + '/images/shadow-bottom.png', alt='shadow-bottom')
 		#requestForm.fold.requestForm.mobile
 			h1.headingMain BOOKING DETAILS
 			span.underline(style='border-color:#888;margin:20px auto 20px auto;')
@@ -221,7 +221,7 @@ html
 						li
 							.ground-tile(sports=availableSports.join(','))
 								a(href=betaUrl + ground.slug)
-									img(src=cdn + 'images/arenas/' + ground._id + '/cover.jpg')
+									img(src=cdn + '/images/arenas/' + ground._id + '/cover.jpg')
 									h1.small #{ground.name}
 									p #{ground.area}
 		.fold.footer.mobile
@@ -234,27 +234,27 @@ html
 					input.mediumLength.emailId-touch(placeholder='Your email address', value='' disabled)
 					button#subscribeSubmit.main-cta(disabled) Submit
 				.email-left
-					img.zombie.hide(src=cdn + 'images/zombie.png', alt='zombie')
+					img.zombie.hide(src=cdn + '/images/zombie.png', alt='zombie')
 					small
 						| We are constantly evolving to give you the best service possible, and we absolutely devour any feedback we get.
 						br
 						span.underline(style='border-color:#fff;margin:10px auto 10px auto;width:100%;')
 						b Yes, we are feedback ZOMBIES! Feed us at
 					span.emailId
-						img.smallZombie(src=cdn + 'images/zombie.png', alt='zombie')
+						img.smallZombie(src=cdn + '/images/zombie.png', alt='zombie')
 						a(href='mailto:brains@courtside.in', target='_blank') brains@courtside.in
 			span.companyName.mobile
 				h1 Can we be friends?
 				a(href='https://www.facebook.com/courtside.in', target='_blank')
-					img(src=cdn + 'images/facebook.png', alt='fb')
+					img(src=cdn + '/images/facebook.png', alt='fb')
 				a(href='https://twitter.com/courtside_in', target='_blank')
-					img(src=cdn + 'images/twitter.png', alt='tweet')
+					img(src=cdn + '/images/twitter.png', alt='tweet')
 				a(href='https://plus.google.com/b/114428004593147002318/114428004593147002318/posts/p/pub', target='_blank')
-					img(src=cdn + 'images/google.png', alt='google')
+					img(src=cdn + '/images/google.png', alt='google')
 				span.innerSection.hide
 					| An initiative by   
 					b Courtside Sports Technologies Pvt. Ltd.
 		script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
-		script(src=cdn + 'lib/jquery.transit.min.js')
-		script(src=cdn + 'lib/ion.rangeSlider.min.js')
-		script(src=cdn + 'scripts/all.js')
+		script(src=assets + '/lib/jquery.transit.min.js')
+		script(src=assets + '/lib/ion.rangeSlider.min.js')
+		script(src=assets + '/scripts/all.js')
