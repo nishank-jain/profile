@@ -958,10 +958,10 @@ $( window ).scroll(function() {
 	$('.menuIcon').removeClass('menuActive');
 
 	if (scrolledVal > windowHeight*threshold){
-			$(".fixed-menu span.logo-fixed").clearQueue().transition({width:"128px"},200);
+			$(".fixed-menu a.logo-fixed").clearQueue().transition({width:"128px"},200);
 			$(".featureList li img").clearQueue().transition({y:0, opacity:0.8},1500);
 	} else {
-		$(".fixed-menu span.logo-fixed:not(.groundPage)").clearQueue().transition({width:"0px"},200);
+		$(".fixed-menu a.logo-fixed:not(.groundPage)").clearQueue().transition({width:"0px"},200);
 	}
 	if (scrolledVal > $('.fold.contact .cell-1').offset().top - windowHeight*0.2) {
 		$('.fold.contact ul.contactOptions > li').children('img').clearQueue().transition({scale:1},1000);

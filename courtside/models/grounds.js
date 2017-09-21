@@ -10,7 +10,7 @@ var groundSchema = new Schema({
 	isRegistered: Boolean,
 	phoneNumber: Number,
 	owner: String,
-	amenities: String,
+	amenities: Schema.Types.Mixed,
 	pricing: Schema.Types.Mixed,
 	equipment: Schema.Types.Mixed,
 	restrictions: Schema.Types.Mixed,

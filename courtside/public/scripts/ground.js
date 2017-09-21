@@ -162,3 +162,9 @@ function initMap () {
         map: map
     });
 }
+
+$('.selectedSport').on('click', function (e) {
+    var selectedSport = $(e.currentTarget).data('selectedSport');
+    $('.sportDetails').addClass('hide');
+    $('#' + selectedSport).removeClass('hide');
+});
