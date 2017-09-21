@@ -1,0 +1,129 @@
+doctype html
+html
+	head
+		meta(name='viewport', content='width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+		meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+		meta(name='description', content='Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you.')
+		title Courtside - Book sports facilities in Bangalore
+		link(rel='shortcut icon', href=cdn + '/images/live/favicon.png', type='image/x-icon')
+		link(rel='stylesheet', type='text/css', href=assets + '/styles/live.css')
+		link(rel='stylesheet', type='text/css', href=assets + '/styles/fullPage.css')
+	body
+		.navBarPc.navBar.mobile
+			img.pcLogo(src=cdn + '/images/live/logooriginal.png')
+			ul.mainMenu
+				//- a(href='#believe')
+				li.active(data-menuanchor='believe') We believe
+				//- a(href='#features')
+				li(data-menuanchor='features') Features
+				//- a(href='#getapp')
+				li(data-menuanchor='getapp') Get app
+				//- a(href='#support')
+				li(data-menuanchor='support') Support
+				//- a(href='https://www.courtside.in/business/', target='_blank')
+					li For business
+		.navBarMob.navBar.mobile
+			img.pcLogo(src=cdn + '/images/live/logooriginal.png')
+			img.sideMenuIcon(src=cdn + '/images/live/sideMenuIcon.png')
+			ul#mobileMenu.mainMenu
+				//- a(href='#believe')
+				a
+					li.active(data-menuanchor='believe') We believe
+				//- a(href='#features')
+				a
+					li(data-menuanchor='features') Features
+				//- a(href='#getapp')
+				a
+					li(data-menuanchor='getapp') Get app
+				//- a(href='#support')
+				a
+					li(data-menuanchor='support') Support
+				//- a(href='https://www.courtside.in/business/', target='_blank')
+					li For business
+				//- a(href='#')
+				a
+					li(style='display:inline-block;height:40px;width:40px;line-height:40px;border-radius:50%;border:1px solid #fff;margin:auto;padding:0px;margin:0px;') X
+		#fullpage
+			.section.fold.intro.mobile(style='z-index:10000;border:0px; background-image: url(' + cdn + '/images/live/intro-background.jpg' + ')')
+				img.pcLogo.hide(src=cdn + '/images/live/logooriginal.png')
+				.quote.mobile
+					span.quoteHeading WE BELIEVE
+					| Life is a game
+					br
+					| So play your heart out
+				.scrollDown
+					img(src=cdn + '/images/live/scrolldown.gif')
+			#section1.section
+				#slide1.slide.mobile.image-slide(data-anchor='slide1')
+					.image-container
+						img.firstImage(src=cdn + '/images/live/demo-1.png')
+						img.secondImage(src=cdn + '/images/live/demo-2.png')
+						img(src=cdn + '/images/live/demo-3.png')
+					p
+						span.heading(style='') Booking a game made easy
+						| Find sports venues around you and book them instantly
+				#slide2.slide.mobile.image-slide(data-anchor='slide2')
+					.image-container
+						img.coming-soon(src=cdn + '/images/live/coming-soon-2.png', alt='Coming soon..')
+					p
+						span.heading Connect with other players
+						| Plug in to the thriving sports community of any city
+				#slide3.slide.mobile.image-slide(data-anchor='slide3')
+					.image-container
+						img.laptop-demo(src=cdn + '/images/live/laptop-demo.png', alt='Ground management software')
+					p
+						span.heading Power up your venue
+						| Manage game bookings and connect with your customers with Courtside for Business
+			#section2.section
+				.download-section.mobile(style='background-image: url(' + cdn + '/images/live/diagonal-tile.png' + ')')
+					.image-container
+						span.align-helper
+						img(src=cdn + '/images/live/download-now-android.png')
+					.download-links
+						| Try booking with us and get
+						span.heading Flat 10% OFF
+						br
+						a(href='//play.google.com/store/apps/details?id=com.courtside.courtside', target='_blank')
+							img(src=cdn + '/images/live/android-link.png')
+						img(src=cdn + '/images/live/iOS-link.png')
+			.section(style="background:url(" + cdn + '/images/live/footer-background.jpg' + ") bottom left no-repeat;background-size:100% auto;text-align:center;")
+				span.footer-intro.mobile(style='')
+					| Have an idea on how Courtside could be more fun?
+					br
+					| Would love to build together?
+					br
+					| We love to hear it all.
+				span.section-wrapper.mobile(style='')
+					span.section-1(style='')
+						img.noground(src=cdn + '/images/live/smart-idea.png')
+						| Write to us your suggestions. Feed our zombies at
+						br
+						span.emailId(style='position:relative;')
+							a(href='mailto:brains@courtside.in', target='_blank') brains@courtside.in
+					span.section-2(style='')
+						img.noground(src=cdn + '/images/live/customer-support.png')
+						| Confused about something or have doubts, call us at
+						br
+						span#callExternal(style='font-size:30px;') +91 99999 99999
+				span.footerEnds(style='display:block;width:100%;margin:auto;color:#51a1c5;position:absolute;bottom:40px;font-family:SansLt;')
+					| Can we be friends?
+					ul
+						li
+							a(href='//www.facebook.com/courtside.in/', target='_blank') Facebook
+						li
+							a(href='//twitter.com/courtside_in', target='_blank') Twitter
+						li
+							a(href='//www.instagram.com/courtside.in/', target='_blank') Instagram
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+		script(src=assets + '/lib/fullPage.js')
+		script(type='text/javascript').
+			$(document).ready(function() {
+				$('#fullpage').fullpage({
+					menu: '.mainMenu',
+					anchors: ['believe', 'features', 'getapp', 'support'],
+					sectionsColor: ['', '#1c486d', '#ffffff'],
+					slidesNavigation: true,
+					autoScrolling:true
+				});
+			});
+		script(src=assets + '/scripts/live.js')

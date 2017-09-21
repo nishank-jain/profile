@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
 			return;
 		}
 		res.render('beta/index', {
-			title: "Courtside - Book sports facilities in Bangalore",
+			title: "Courtside Beta - Book sports facilities in Bangalore",
 			description: "Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you.",
 			topbar: false,
 			grounds: grounds
@@ -47,29 +47,17 @@ router.get('/:groundSlug', function(req, res) {
 			res.status(404).render('404');
 		}
 		else {
+			var groundDetails = results.groundDetails.ground;
+			var groundsList = results.groundsList;
 			res.render('beta/ground', {
-				title: "Courtside - Book sports facilities in Bangalore",
-				description: "Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you.",
+				title: groundDetails.name + ' - ' + groundDetails.area  + ' - ' + groundDetails.city + ' | Courtside',
+				description: groundDetails.name + " - Ground details",
 				topbar: false,
-				ground: results.groundDetails.ground,
-				groundsList: results.groundsList
-				// courts: result.courts
+				ground: groundDetails,
+				groundsList: groundsList
 			});
 		}
 	});
-	// groundsController.detail(req, function(err, result) {
-	// 	if (err) {
-	// 		res.send(err);
-	// 		return;
-	// 	}
-	// 	res.render('beta/ground', {
-	// 		title: "Courtside - Book sports facilities in Bangalore",
-	// 		description: "Why spend time finding a ground when someone else can do that for you? We book, you play. Message us here and we will get back to you.",
-	// 		topbar: false,
-	// 		ground: result.ground,
-	// 		courts: result.courts
-	// 	});
-	// });
 });
 
 
