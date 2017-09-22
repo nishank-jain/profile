@@ -1,6 +1,6 @@
 (function($){
 	$(function(){
-		// $('.button-collapse').sideNav();
+		$('.button-collapse').sideNav();
 		$('.parallax').parallax();
 	}); // end of document ready
 })(jQuery); // end of jQuery name space
@@ -8,15 +8,15 @@
 var navOpen = false;
 var $body = $('body');
 var oldWidth = $body.innerWidth();
-var nav = $('.button-collapse').data('activates');
+var nav = $('.side-menu').data('activates');
 
-$('#sidenav-overlay').on('click', function () {
+$('#sidenav-grey').on('click', function () {
 	$('#' + nav).css({'width': '50px'}).removeClass('nav-active').addClass('nav-inactive');
 	$('body').css({
 		overflow: '',
 		width: ''
 	});
-	$('#sidenav-overlay').animate({
+	$('#sidenav-grey').animate({
 		opacity: 0
 	}, 150, function () {
 		$(this).css({'display': 'none'});
@@ -24,7 +24,7 @@ $('#sidenav-overlay').on('click', function () {
 	navOpen = false;
 });
 
-$('.button-collapse').on('click', function (e) {
+$('.side-menu').on('click', function (e) {
 	e.preventDefault();
 	if (navOpen) {
 		$('#' + nav).css({'width': '50px'}).removeClass('nav-active').addClass('nav-inactive');
@@ -32,7 +32,7 @@ $('.button-collapse').on('click', function (e) {
 			overflow: '',
 			width: ''
 		});
-		$('#sidenav-overlay').animate({
+		$('#sidenav-grey').animate({
 			opacity: 0
 		}, 150, function () {
 			$(this).css({'display': 'none'});
@@ -42,8 +42,8 @@ $('.button-collapse').on('click', function (e) {
 		$('#' + nav).css({'width': '210px'}).removeClass('nav-inactive').addClass('nav-active');
 		$body.css('overflow', 'hidden');
 		$body.width(oldWidth);
-		$('#sidenav-overlay').css({'display': 'block'});
-		$('#sidenav-overlay').animate({
+		$('#sidenav-grey').css({'display': 'block'});
+		$('#sidenav-grey').animate({
 			opacity: 1
 		}, 200);
 	}

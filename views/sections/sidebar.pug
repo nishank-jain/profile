@@ -1,33 +1,61 @@
-ul.side-nav#nav-icons.nav-inactive
-	li
-		a.button-collapse(href="#" data-activates="nav-icons")
-			i.material-icons.icon menu
-	li
-		a.tooltipped(href="/" data-position="right" data-delay="50" data-tooltip="Home")
-			i.material-icons.icon home
-			p.icon-name Home
-	li
-		a.tooltipped(href="/academics" data-position="right" data-delay="50" data-tooltip="Academics")
-			i.material-icons.icon school
-			p.icon-name Academics
-	li
-		a.tooltipped(href="/experience" data-position="right" data-delay="50" data-tooltip="Experience")
-			i.material-icons.icon work
-			p.icon-name Experience
-	li
-		a.tooltipped(href="/entrepreneurship" data-position="right" data-delay="50" data-tooltip="Entrepreneurship")
-			i.material-icons.icon wb_incandescent
-			p.icon-name Entrepreneurship
-	li
-		a.tooltipped(href="/projects" data-position="right" data-delay="50" data-tooltip="Projects")
-			i.material-icons.icon code
-			p.icon-name Projects
-	li
-		a.tooltipped(href="//medium.com/@nishankjaintdk" data-position="right" data-delay="50" data-tooltip="Blog")
-			i.material-icons.icon border_color
-			p.icon-name Blog
+if is_desktop || is_tablet
+	ul.side-nav#nav-icons.nav-inactive
+		li
+			a.side-menu(href="#" data-activates="nav-icons")
+				i.material-icons.icon menu
+		li
+			a.tooltipped(href="/" data-position="right" data-delay="50" data-tooltip="Home")
+				i.material-icons.icon home
+				p.icon-name Home
+		li
+			a.tooltipped(href="/academics" data-position="right" data-delay="50" data-tooltip="Academics")
+				i.material-icons.icon school
+				p.icon-name Academics
+		li
+			a.tooltipped(href="/experience" data-position="right" data-delay="50" data-tooltip="Experience")
+				i.material-icons.icon work
+				p.icon-name Experience
+		li
+			a.tooltipped(href="/entrepreneurship" data-position="right" data-delay="50" data-tooltip="Entrepreneurship")
+				i.material-icons.icon wb_incandescent
+				p.icon-name Entrepreneurship
+		li
+			a.tooltipped(href="/projects" data-position="right" data-delay="50" data-tooltip="Projects")
+				i.material-icons.icon code
+				p.icon-name Projects
+		li
+			a.tooltipped(href="//medium.com/@nishankjaintdk" data-position="right" data-delay="50" data-tooltip="Blog")
+				i.material-icons.icon border_color
+				p.icon-name Blog
 
-#sidenav-overlay
+if is_phone
+	ul.side-nav#slide-out
+		li
+			a.tooltipped(href="/" data-position="right" data-delay="50" data-tooltip="Home")
+				i.material-icons.icon home
+				p.icon-name Home
+		li
+			a.tooltipped(href="/academics" data-position="right" data-delay="50" data-tooltip="Academics")
+				i.material-icons.icon school
+				p.icon-name Academics
+		li
+			a.tooltipped(href="/experience" data-position="right" data-delay="50" data-tooltip="Experience")
+				i.material-icons.icon work
+				p.icon-name Experience
+		li
+			a.tooltipped(href="/entrepreneurship" data-position="right" data-delay="50" data-tooltip="Entrepreneurship")
+				i.material-icons.icon wb_incandescent
+				p.icon-name Entrepreneurship
+		li
+			a.tooltipped(href="/projects" data-position="right" data-delay="50" data-tooltip="Projects")
+				i.material-icons.icon code
+				p.icon-name Projects
+		li
+			a.tooltipped(href="//medium.com/@nishankjaintdk" data-position="right" data-delay="50" data-tooltip="Blog")
+				i.material-icons.icon border_color
+				p.icon-name Blog
+
+#sidenav-grey
 
 //- ul.side-nav#slide-out
 	li.no-padding

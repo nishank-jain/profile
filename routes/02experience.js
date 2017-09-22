@@ -5,8 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
 	res.render('experience/index', {
 		title: "Experience - Nishank Jain",
-		description: "Professional work experience and startup experience.",
-		topbar: false
+		description: "Professional work experience and startup experience."
 	});
 });
 

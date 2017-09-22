@@ -5,8 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
 	res.render('entrepreneurship/index', {
 		title: "Entrepreneurship - Nishank Jain",
-		description: "Starting up a company - a sports venture called Courtside, building technology from ground up.",
-		topbar: false
+		description: "Starting up a company - a sports venture called Courtside, building technology from ground up."
 	});
 });
 

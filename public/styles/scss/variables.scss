@@ -61,6 +61,56 @@ html, body {
 	}
 }
 
+.logo {
+	background-color: #000;
+	text-align: center;
+	position: fixed;
+	z-index: 998;
+	img {
+		width: 50%;
+		vertical-align: middle;
+	}
+	a {
+		position: absolute;
+		line-height: 0;
+		top: 14px;
+		color: white;
+		left: 15px;
+	}
+}
+
+.logo-placeholder {
+	height: 51px;
+}
+
+#slide-out {
+	li {
+		a {
+			padding: 0;
+			height: 60px;
+			line-height: 60px;
+			.icon {
+				width: 50px;
+				height: inherit;
+				line-height: inherit;
+			}
+			.icon-name {
+				width: 160px;
+				height: inherit;
+				line-height: inherit;
+			}
+			i {
+				text-align: center;
+				margin: 0;
+				vertical-align: middle;
+			}
+			p {
+				margin: 0;
+			}
+		}
+	}
+}
+
 #nav-icons {
 	transform: translateX(0);
 	width: 50px;
@@ -100,7 +150,7 @@ html, body {
 	@include css3-prefix('transition', 'width 0.2s ease-out');
 }
 
-#sidenav-overlay {
+#sidenav-grey {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -123,6 +173,11 @@ p {
 	color: rgba(255,255,255,.9);
 	.section {
 		width: 100%;
+	}
+	h2 {
+		@media (max-width: 600px) {
+			font-size: 3rem;
+		}
 	}
 }
 
