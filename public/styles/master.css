@@ -717,6 +717,32 @@ p {
   color: inherit;
 }
 
+.entrepreneurship-container .carousel {
+  border: 1px solid #0d4b71;
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .entrepreneurship-container .carousel {
+    max-height: 250px;
+  }
+}
+
+.entrepreneurship-container .carousel .indicators {
+  background-color: #0d4b71;
+}
+
+.entrepreneurship-container .carousel .indicators .indicator-item {
+  height: 12px;
+  width: 12px;
+  margin: 8px 4px;
+  vertical-align: middle;
+}
+
+.entrepreneurship-container .materialboxed {
+  margin: auto;
+}
+
 .entrepreneurship1 .cover {
   margin-bottom: 4em;
   margin-top: 4em;
@@ -746,27 +772,42 @@ p {
   margin-right: 30px;
 }
 
-.entrepreneurship1 .problems {
+.entrepreneurship1 .problems, .entrepreneurship1 .idea, .entrepreneurship1 .website, .entrepreneurship1 .app {
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.entrepreneurship1 .problems figure {
+.entrepreneurship1 .problems figure, .entrepreneurship1 .idea figure, .entrepreneurship1 .website figure, .entrepreneurship1 .app figure {
+  margin: 15px 0;
+}
+
+.entrepreneurship1 .problems figcaption, .entrepreneurship1 .idea figcaption, .entrepreneurship1 .website figcaption, .entrepreneurship1 .app figcaption {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.entrepreneurship1 .problems figcaption p, .entrepreneurship1 .idea figcaption p, .entrepreneurship1 .website figcaption p, .entrepreneurship1 .app figcaption p {
   margin: 0;
 }
 
-.entrepreneurship1 .problems figcaption {
-  font-size: 12px;
-}
-
-.entrepreneurship1 .problems img {
+.entrepreneurship1 .problems img, .entrepreneurship1 .idea img, .entrepreneurship1 .website img, .entrepreneurship1 .app img {
   height: 200px;
 }
 
 @media (max-width: 600px) {
-  .entrepreneurship1 .problems img {
+  .entrepreneurship1 .problems img, .entrepreneurship1 .idea img, .entrepreneurship1 .website img, .entrepreneurship1 .app img {
     height: auto;
     width: 100%;
   }
+}
+
+.entrepreneurship1 .problems .btn, .entrepreneurship1 .idea .btn, .entrepreneurship1 .website .btn, .entrepreneurship1 .app .btn {
+  background-color: #0d4b71;
+  margin-top: 15px;
+}
+
+.entrepreneurship1 .app img {
+  height: auto;
 }
 
 .personal-projects-container .projects .image {
