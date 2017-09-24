@@ -896,6 +896,10 @@ p {
   background-color: #f1592a;
 }
 
+.personal-projects-container .project6 .card-content {
+  background-color: #10bbb3;
+}
+
 .personal-projects-container .more-projects a {
   margin: auto;
 }
