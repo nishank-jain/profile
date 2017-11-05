@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var sassCompiler 	= require('node-sass-middleware');
+var sassCompiler = require('node-sass-middleware');
 var device = require('express-device');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -42,6 +42,9 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 
 // Courtside Beta Website
 app.use('/courtside', require('./courtside/app'));
+
+// VO Events project
+app.use('/projects/vo-events', require('./projects/vo-events/app'));
 
 // T-shirt design project
 app.use('/projects/t-shirt-design-editor', require('./projects/t-shirt-design-editor/app'));

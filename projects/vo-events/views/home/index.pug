@@ -1,0 +1,9 @@
+extend ../layout
+block append head
+	title #{title}
+	meta(name="description" content="#{description}")
+	//- link(rel="canonical", href="//www.nishankjain.com/academics")
+block content
+	include count-chart
+block append js
+	include scripts

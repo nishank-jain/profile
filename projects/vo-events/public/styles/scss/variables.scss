@@ -1,0 +1,186 @@
+// Import the required mixins
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700';
+@import 'css3-mixins';
+// Font Weights
+$light: 400;
+$regular: 500;
+$medium: 600;
+$bold: 700;
+$extra-bold: 800;
+
+// Global Styles
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+// 	margin: 0;
+// 	padding: 0;
+// }
+
+@media only screen and (min-width: 993px) {
+	.container {
+		width: 85%;
+	}
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+	font-family: 'Roboto';
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.row {
+	margin-bottom: 0;
+}
+
+.card {
+	margin: 1rem 0 1rem 0;
+}
+
+.side-nav {
+	.collapsible-header {
+		padding: 0 40px;
+	}
+	.header-contents {
+		padding: 0 30px 0 60px !important;
+		font-weight: $light;
+	}
+}
+
+.logo {
+	background-color: #000;
+	text-align: center;
+	position: fixed;
+	z-index: 998;
+	img {
+		width: 50%;
+		vertical-align: middle;
+	}
+	a {
+		position: absolute;
+		line-height: 0;
+		top: 14px;
+		color: white;
+		left: 15px;
+	}
+}
+
+.logo-placeholder {
+	height: 51px;
+}
+
+#slide-out {
+	li {
+		a {
+			padding: 0;
+			height: 60px;
+			line-height: 60px;
+			.icon {
+				width: 50px;
+				height: inherit;
+				line-height: inherit;
+			}
+			.icon-name {
+				width: 160px;
+				height: inherit;
+				line-height: inherit;
+			}
+			i {
+				text-align: center;
+				margin: 0;
+				vertical-align: middle;
+			}
+			p {
+				margin: 0;
+			}
+		}
+	}
+}
+
+#nav-icons {
+	transform: translateX(0);
+	width: 50px;
+	z-index: 1000;
+	li {
+		a {
+			padding: 0;
+			height: 60px;
+			line-height: 60px;
+			.icon {
+				width: 50px;
+				height: inherit;
+				line-height: inherit;
+			}
+			.icon-name {
+				width: 160px;
+				height: inherit;
+				line-height: inherit;
+			}
+			i {
+				text-align: center;
+				margin: 0;
+				vertical-align: middle;
+			}
+			p {
+				margin: 0;
+			}
+		}
+	}
+}
+
+.nav-inactive {
+	@include css3-prefix('transition', 'width 0.15s ease-in');
+}
+
+.nav-active {
+	@include css3-prefix('transition', 'width 0.2s ease-out');
+}
+
+#sidenav-grey {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 120vh;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 997;
+	opacity: 0;
+	display: none;
+}
+
+p {
+	line-height: 2rem;
+}
+
+.parallax-container {
+	min-height: 380px;
+	line-height: 0;
+	height: auto;
+	color: rgba(255,255,255,.9);
+	.section {
+		width: 100%;
+	}
+	h2 {
+		@media (max-width: 600px) {
+			font-size: 3rem;
+		}
+	}
+}
+
+.fold {
+	min-height: 275px;
+}
