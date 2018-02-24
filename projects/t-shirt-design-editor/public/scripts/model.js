@@ -1,10 +1,20 @@
-RequestModel = function ($http) {
+RequestModel = function ($http, Upload) {
 	var requestMethods = {
 		createNewDesign: function (cb) {
 			var url = 'api/createnewdesign';
 			$http({
 				method: 'GET',
 				url: url
+			}).then(function (response) {
+				cb(response);	// Success callback
+			}, function (response) {
+				cb(response);	// Failure callback
+			});
+		},
+		uploadImage: function (data, cb) {
+			Upload.upload({
+				url: '/api/uploadImage',
+				data: data
 			}).then(function (response) {
 				cb(response);	// Success callback
 			}, function (response) {

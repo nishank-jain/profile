@@ -60,19 +60,32 @@ fpControllers.controller('mainController', ['$http', 'RequestModel', 'Upload', '
 
 	mainCtrl.uploadFile = function (file) {
 		if (file) {
-			Upload.upload({
-				url: '/api/uploadImage',
-				data: {
-					folderName: mainCtrl.designId,	// folderName has to be sent first so that Multer catches it before image
-					file: file
+			var data = {
+				folderName: mainCtrl.designId,	// folderName has to be sent first so that Multer catches it before image
+				file: file
+			};
+			RequestModel.uploadImage(data, function (response) {
+				if (response.status === 200 && response.data.success) {
+					mainCtrl.file = '';
+					mainCtrl.addImage(response.data.url.slice(6) + '/' + response.data.fileName);
 				}
-			})
-			.then(function (response) {
-				mainCtrl.file = '';
-				mainCtrl.addImage(response.data.url.slice(6) + '/' + response.data.fileName);
-			}, function (err) {
-				console.log('Error: ' + err);
+				else {
+					console.log('Error: ' + err);
+				}
 			});
+			// Upload.upload({
+			// 	url: '/api/uploadImage',
+			// 	data: {
+			// 		folderName: mainCtrl.designId,	// folderName has to be sent first so that Multer catches it before image
+			// 		file: file
+			// 	}
+			// })
+			// .then(function (response) {
+			// 	mainCtrl.file = '';
+			// 	mainCtrl.addImage(response.data.url.slice(6) + '/' + response.data.fileName);
+			// }, function (err) {
+			// 	console.log('Error: ' + err);
+			// });
 		}
 	};
 
