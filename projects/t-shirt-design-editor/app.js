@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 require('sqlite3');
 
 var index = require('./routes/index');
-var imageUpload = require('./routes/upload');
+// var imageUpload = require('./routes/upload');
 
 var models = require('./models');
 models.sequelize.sync();
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', index);
-app.use('/api', imageUpload);
+// app.use('/api', imageUpload);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
