@@ -13,7 +13,7 @@ RequestModel = function ($http, Upload) {
 		},
 		uploadImage: function (data, cb) {
 			Upload.upload({
-				url: '/api/uploadImage',
+				url: 'api/uploadImage',
 				data: data
 			}).then(function (response) {
 				cb(response);	// Success callback
