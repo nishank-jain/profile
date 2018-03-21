@@ -1,0 +1,16 @@
+.nodemonignore
+.sass-cache/
+node_modules/
+public/lib/
+app/tests/coverage/
+.bower-*/
+.idea/
+coverage/
+
+# public/styles/*.css
+public/images/uploads
+
+.sublime-project
+*.sublime-project
+*.sublime-workspace
+*.sqlite

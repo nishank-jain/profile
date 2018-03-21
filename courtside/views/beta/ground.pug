@@ -1,0 +1,196 @@
+//- doctype html
+html
+	head
+		//- Global site tag (gtag.js) - Google Analytics
+		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-114664134-1")
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-114664134-1');
+		meta(name='viewport', content='width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+		meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+		meta(name='description', content='#{description}')
+		title #{ground.name} - #{ground.area} - #{ground.city} | Courtside
+		link(rel='shortcut icon', href=cdn + '/images/favicon.png', type='image/x-icon')
+		link(rel='stylesheet', type='text/css', href=assets + '/styles/all.css')
+		link(rel='stylesheet prefetch', href=assets + '/styles/photoswipe.css')
+		link(rel='stylesheet prefetch', href=assets + '/styles/default-skin/default-skin.css')
+		link(rel='stylesheet', href=assets + '/styles/default-skin/default-skin.css')
+	body.pushmenu-push
+		.fixed-menu.ground.mobile
+			div(style='width:100%;max-width:1000px;position:relative;text-align:left;margin:auto')
+				a.logo-fixed.groundPage(style='width:128px;' href=".")
+					img.logo(src=cdn + '/images/logo.png', alt='Courtside')
+				input.groundQuery(placeholder='Search for ground, sport or location', name='groundQuery', type='text')
+				ul.search-results.mobile
+					each ground in groundsList
+						if ground.city === "Bengaluru"
+							li
+								a(href=betaUrl + ground.slug) #{ground.name} (#{ground.area})
+									each sport in ground.sports
+										span
+											img(src=cdn + '/images/sports/' + sport.slug + '.png', alt=sport.name)
+		.fixed-menu-placeholder
+		.groundName.mobile
+			.groundInfo
+				h1 #{ground.name}
+				p #{ground.area}
+				p
+					a#linkImage.map-photo
+						img.mapIcon(src=cdn + "/images/route.png" style='display: inline-block;')
+						img.coverIcon(src=cdn + "/images/shutter.png" style='display: none;')
+						span#showMap Locate on Google Maps
+		.ground.cover(style="background-image: url(" + cdn + '/images/arenas/' + ground._id + '/cover_ground.jpg' + ")")
+		.mapContent.mapArea
+			#map(style='width: 100%; height: 100%')
+		.ground.contentWrap
+			.leftPanel.mobile
+				span.bookField
+					| For booking or enquiries
+					br
+					b +91 9999 999 999
+				ul.ameneties
+					li.heading FACILITIES AVAILABLE
+					each amenity in ground.amenities
+						li
+							img(src=cdn + "/images/amenities/" + amenity.slug + '.png')
+							span #{amenity.name}
+			.rightPanel.mobile
+				ul.availableSports
+					each sport, index in ground.sports
+						li.selectedSport(data-selected-sport=sport.slug, class=(index === 0 ? 'active' : ''))
+							img(src=cdn + "/images/sports/" + sport.slug + '.png')
+							span #{sport.name}
+				each sport, index in ground.sports
+					.sportDetails(id=sport.slug, class=(index === 0 ? '' : 'hide'))
+						.my-gallery.mobile
+							if ground.images[sport.slug]
+								each image in ground.images[sport.slug]
+									figure
+										a(href=cdn + '/images/arenas/' + ground._id + '/' + sport.slug + '/' + image)
+											img(src=cdn + '/images/arenas/' + ground._id + '/' + sport.slug + '/thumbs/' + image)
+						ul.upperCategory
+							li
+								h3 Booking Charges
+								each surface, surfaceName in ground.pricing[sport.name]
+									p #{surfaceName}
+									table(cellpadding='0', cellspacing='0')
+										tbody
+											tr
+												th DAY
+												th TIMINGS
+												th HOURLY RATE
+											each day, dayName in surface
+												tr
+													td.dayName #{dayName === 'default' ? 'everyday' : dayName}
+													td(colspan='2')
+														table(style='width:100%;')
+															each timing in day
+																-function modifyTime(time) {
+																	-var ampm = '';
+																	-if (time < 12 || time === 24) {
+																		-time = time < 1 ? time + 12 : time;
+																		-time = time === 24 ? 12 : time;
+																		-ampm = 'AM';
+																	-}
+																	-else if (time >= 12) {
+																		-time = time - 12;
+																		-ampm = 'PM'
+																	-}
+																	-if (time !== parseInt(time)) {
+																		-time = parseInt(time) + ':' + 60 * (time - parseInt(time));
+																	-}
+																	-time = time + ' ' + ampm;
+																	-return time;
+																-}
+																tr
+																	td(width='50%') #{modifyTime(timing.start)} to #{modifyTime(timing.end)}
+																	td(width='50%') #{timing.rate}
+			.leftPanel.mobileOnly.mobile
+				ul.ameneties
+					li.heading FACILITIES AVAILABLE
+					each amenity in ground.amenities
+						li
+							img(src=cdn + "/images/amenities/" + amenity.slug + '.png')
+							span #{amenity.name}
+				span.bookField
+					| For booking or enquiries
+					br
+					b +91 9999 999 999
+			// Root element of PhotoSwipe. Must have class pswp.
+			.pswp(tabindex='-1', role='dialog', aria-hidden='true')
+				//
+					Background of PhotoSwipe.
+					It's a separate element, as animating opacity is faster than rgba().
+				.pswp__bg
+				// Slides wrapper with overflow:hidden.
+				.pswp__scroll-wrap
+					// Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory.
+					// don't modify these 3 pswp__item elements, data is added later on.
+					.pswp__container
+						.pswp__item
+						.pswp__item
+						.pswp__item
+					// Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
+					.pswp__ui.pswp__ui--hidden
+						.pswp__top-bar
+							// Controls are self-explanatory. Order can be changed.
+							.pswp__counter
+							button.pswp__button.pswp__button--close(title='Close (Esc)')
+							button.pswp__button.pswp__button--share(title='Share')
+							button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
+							button.pswp__button.pswp__button--zoom(title='Zoom in/out')
+							// Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR
+							// element will get class pswp__preloader--active when preloader is running
+							.pswp__preloader
+								.pswp__preloader__icn
+									.pswp__preloader__cut
+										.pswp__preloader__donut
+						.pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+							.pswp__share-tooltip
+						button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
+						button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
+						.pswp__caption
+							.pswp__caption__center
+			br
+			br
+		.fold.footer.mobile
+			.email-wrapper
+				.email-right
+					small Like what you see? Subscribe to our updates
+					span.underline.hide(style='border-color:#fff;margin:10px 20px 10px 0px;width:auto;')
+					br
+					input.mediumLength.name-touch(placeholder='Name', value='', name='fullName' disabled)
+					input.mediumLength.emailId-touch(placeholder='Your email address', value='' disabled)
+					button#subscribeSubmit.main-cta(disabled) Submit
+				.email-left
+					img.zombie.hide(src=cdn + '/images/zombie.png', alt='zombie')
+					small
+						| We are constantly evolving to give you the best service possible, and we absolutely devour any feedback we get.
+						br
+						span.underline(style='border-color:#fff;margin:10px auto 10px auto;width:100%;')
+						b Yes, we are feedback ZOMBIES! Feed us at
+					span.emailId
+						img.smallZombie(src=cdn + '/images/zombie.png', alt='zombie')
+						a(href='mailto:brains@courtside.in', target='_blank') brains@courtside.in
+			span.companyName.mobile
+				h1 Can we be friends?
+				a(href='//www.facebook.com/courtside.in', target='_blank')
+					img(src=cdn + '/images/facebook.png', alt='fb')
+				a(href='//twitter.com/courtside_in', target='_blank')
+					img(src=cdn + '/images/twitter.png', alt='tweet')
+				a(href='//plus.google.com/b/114428004593147002318/114428004593147002318/posts/p/pub', target='_blank')
+					img(src=cdn + '/images/google.png', alt='google')
+				span.innerSection.hide
+					| An initiative by   
+					b Courtside Sports Technologies Pvt. Ltd.
+		script.
+			var latLong = '#{ground.latlong}';
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+		script(src=assets + '/lib/photoswipe.min.js')
+		script(src=assets + '/lib/photoswipe-ui-default.min.js')
+		script(src=assets + '/lib/jquery.transit.min.js')
+		script(src=assets + '/scripts/index.js')
+		script(src=assets + '/scripts/ground.js')
+		script(src='//maps.googleapis.com/maps/api/js?key=AIzaSyB5mPAXGJ3Vm_IultOb5crPgAvtb76_Q6I&callback=initMap' async defer)

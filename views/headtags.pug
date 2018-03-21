@@ -1,0 +1,16 @@
+block head
+	//- Global site tag (gtag.js) - Google Analytics
+	script(async src="https://www.googletagmanager.com/gtag/js?id=UA-114664134-1")
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-114664134-1');
+
+	meta(charset='UTF-8')
+	meta(name="theme-color" content="#000000")
+	meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0')
+	link(rel='shortcut icon' type='image/x-icon' href=cdn + '/common/favicon.ico')
+	link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css")
+	include css

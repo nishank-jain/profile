@@ -1,0 +1,10 @@
+extend ../layout
+block append head
+	title #{title}
+	meta(name="description" content="#{description}")
+	link(rel="canonical", href="//www.nishankjain.com/entrepreneurship")
+block content
+	include ../common/entrepreneurship-parallax
+	include entrepreneurship-container
+block append js
+	include scripts

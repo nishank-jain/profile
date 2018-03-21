@@ -1,0 +1,121 @@
+.company-container {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	.card {
+		font-size: 20px;
+		margin-bottom: 0;
+		@media (max-width: 600px) {
+			font-size: 14px;
+		}
+		padding: 0 15px;
+		p {
+			margin: 10px 0;
+		}
+		.dates {
+			float: right;
+			@media (max-width: 600px) {
+				float: none;
+			}
+		}
+		.name {
+			font-size: 30px;
+		}
+	}
+	img {
+		max-width: 175px;
+		width: 100%;
+		display: block;
+		margin: auto;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	i {
+		margin-right: 15px;
+	}
+	span {
+		background-color: #212121;
+		color: white;
+		padding: 5px 10px;
+		border-radius: 2px;
+		margin-right: 30px;
+	}
+	.details {
+		margin-left: 39px;
+		margin-top: 5px;
+		margin-bottom: 25px;
+	}
+	.company-details {
+		.row {
+			margin: 0;
+		}
+		.projects-carousel {
+			margin-left: 39px;
+			padding: 0;
+		}
+	}
+	.company1 {
+		.card {
+			background-color: #e03150;
+		}
+		.company-details1 {
+			background-color: rgba(224, 49, 80, 0.06);
+			padding-top: 15px;
+			i {
+				color: #e03150;
+			}
+			span {
+				background-color: #e03150;
+			}
+		}
+		.btn {
+			background-color: #e03150;
+			margin-bottom: 15px;
+			i {
+				color: white;
+			}
+		}
+	}
+	.company2 {
+		.card {
+			background-color: #f8a91e;
+		}
+		.company-details2 {
+			background-color: rgba(248, 169, 30, 0.06);
+			padding-top: 15px;
+			i {
+				color: #f8a91e;
+			}
+			span {
+				background-color: #f8a91e;
+			}
+		}
+		.btn {
+			background-color: #f8a91e;
+			margin-bottom: 15px;
+			i {
+				color: white;
+			}
+		}
+		.tabs-content {
+			background-color: rgba(248, 169, 30, 0.06);
+		}
+		.tabs {
+			.indicator {
+				background-color: #f8a91e;
+				height: 100%;
+			}
+			.tab {
+				a {
+					background-color: rgba(248, 169, 30, 0.5);
+					color: white;
+					font-weight: $regular;
+					position: relative;
+					z-index: 1;
+				}
+				a:hover {
+					background-color: #f8a91e;
+				}
+			}
+		}
+	}
+}

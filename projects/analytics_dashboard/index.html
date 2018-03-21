@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114664134-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-114664134-1');
+	</script>
+
+	<title>Analytics Dashboard</title>
+	<meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="demoAnalytics" ng-cloak>
+	<div class="header">
+		<div>ANALYTICS DASHBOARD</div>
+	</div>
+
+	<div class="charting" ng-controller="chartController" ng-cloak>
+		<div class="chart-container">
+			<div>
+				<div class="chart-div currently-active" cards-div chart-id="{{chartId}}" style="top: 0; bottom: 0; left: 0; right: 0;"></div>
+			</div>
+		</div>
+		<div class="options-container">
+			<div class="options-div">
+				<md-button class="md-mini vert-split" split-vert>
+				    <md-icon md-font-set="material-icons"> swap_vert </md-icon>
+				</md-button>
+				<md-button class="md-mini hori-split" split-hori>
+				    <md-icon md-font-set="material-icons"> swap_horiz </md-icon>
+				</md-button>
+		      	<md-input-container style="width: 30%;">
+		         	<label>Chart Type</label>
+	        		<md-select ng-model="chart.type" id='chart-select'>
+		          		<md-option change-chart ng-repeat="chart in charts" value="{{chart.type}}">{{chart.name}}</md-option>
+		        	</md-select>
+		      	</md-input-container>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/controllers.js"></script>
+    <script type="text/javascript" src="scripts/directives.js"></script>
+    <script type="text/javascript" src="scripts/common.js"></script>
+	<script type="text/javascript" src="scripts/barChart.js"></script>
+	<script type="text/javascript" src="scripts/pieChart.js"></script>
+</body>

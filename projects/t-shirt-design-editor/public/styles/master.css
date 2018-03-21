@@ -1,0 +1,269 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700';
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Roboto';
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.design-canvas {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 630px;
+  height: 600px;
+  background: white;
+  position: relative;
+  text-align: center;
+}
+
+.user-designs {
+  display: inline-block;
+  border-right: 3px solid #607D8B;
+  border-left: 3px solid #607D8B;
+  border-bottom: 3px solid #607D8B;
+  margin-right: 15px;
+  border-radius: 2px;
+}
+
+.user-designs .user-designs-header {
+  background-color: #607D8B;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 7px 15px;
+  text-align: center;
+  margin: 0 -15px;
+}
+
+.user-design {
+  margin: 15px auto;
+  background-color: rgba(96, 125, 139, 0.67);
+  cursor: pointer;
+  position: relative;
+}
+
+.user-design:hover {
+  background-color: #607D8B;
+}
+
+.user-design img {
+  width: 100%;
+}
+
+.design-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.shirt-canvas {
+  position: absolute;
+  min-width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.canvas-container {
+  margin: 0 auto;
+}
+
+.design-options {
+  margin-left: 15px;
+  border-right: 3px solid #607D8B;
+  border-left: 3px solid #607D8B;
+  border-bottom: 3px solid #607D8B;
+  border-radius: 2px;
+}
+
+.design-options .design-options-header {
+  background-color: #607D8B;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 7px 15px;
+  text-align: center;
+  margin: 0 -15px;
+}
+
+.design-editor-header {
+  background-color: #607D8B;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.design-editor-body {
+  top: 65px;
+  position: relative;
+}
+
+.editor-actions {
+  margin: 15px 0;
+}
+
+.editor-actions ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.editor-actions ul li {
+  text-align: center;
+  cursor: pointer;
+}
+
+.editor-actions ul li p {
+  font-size: 10px;
+  margin: 0;
+  margin-top: -5px;
+}
+
+.add-options {
+  margin: 15px 0;
+}
+
+.add-image, .upload-image, .add-text {
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-out;
+  -khtml-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  border-radius: 2px;
+}
+
+.add-image p, .upload-image p, .add-text p {
+  font-size: 10px;
+  margin: 0;
+  margin-top: -5px;
+}
+
+.add-image {
+  color: #757575;
+}
+
+.add-image:hover {
+  background-color: #757575;
+  color: #ffffff;
+}
+
+.upload-image {
+  color: #293cc1;
+}
+
+.upload-image:hover {
+  background-color: #293cc1;
+  color: #ffffff;
+}
+
+.add-text {
+  color: #757575;
+}
+
+.add-text:hover {
+  background-color: #757575;
+  color: #ffffff;
+}
+
+.new-design {
+  color: #83B114;
+  -webkit-transition: all 0.25s ease-out;
+  -khtml-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  border-radius: 2px;
+}
+
+.new-design:hover {
+  background-color: #83B114;
+  color: #ffffff;
+}
+
+.save-design {
+  color: #13aec7;
+  -webkit-transition: all 0.25s ease-out;
+  -khtml-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  border-radius: 2px;
+}
+
+.save-design:hover {
+  background-color: #13aec7;
+  color: #ffffff;
+}
+
+.last-step {
+  color: #0fcca9;
+  -webkit-transition: all 0.25s ease-out;
+  -khtml-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  border-radius: 2px;
+}
+
+.last-step:hover {
+  background-color: #0fcca9;
+  color: #ffffff;
+}
+
+.next-step {
+  color: #e8bb15;
+  -webkit-transition: all 0.25s ease-out;
+  -khtml-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  border-radius: 2px;
+}
+
+.next-step:hover {
+  background-color: #e8bb15;
+  color: #ffffff;
+}

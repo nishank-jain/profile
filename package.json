@@ -1,9 +1,10 @@
 {
-  "name": "script_config_backend",
+  "name": "my_projects",
   "version": "1.0.0",
-  "description": "Script Configuration Backend",
+  "description": "Single repository for my projects",
   "main": "app.js",
   "scripts": {
+    "prestart": "node preinstall.js && npm install",
     "start": "node ./bin/www",
     "dev": "nodemon --exec node ./bin/www"
   },
@@ -14,9 +15,11 @@
     "body-parser": "^1.18.0",
     "debug": "^3.0.0",
     "express": "^4.15.4",
-    "gitlab": "^1.7.1",
+    "express-device": "^0.4.2",
     "method-override": "^2.3.9",
-    "request": "^2.85.0"
+    "mongoose": "^4.11.11",
+    "node-sass-middleware": "^0.11.0",
+    "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
     "nodemon": "^1.12.0"

@@ -1,1 +1,1 @@
-# Backend for script configuration with Gitlab integration
+# profile

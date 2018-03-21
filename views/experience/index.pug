@@ -1,0 +1,10 @@
+extend ../layout
+block append head
+	title #{title}
+	meta(name="description" content="#{description}")
+	link(rel="canonical", href="//www.nishankjain.com/experience")
+block content
+	include ../common/experience-parallax
+	include company-container
+block append js
+	include scripts

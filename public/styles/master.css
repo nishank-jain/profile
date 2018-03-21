@@ -1,0 +1,905 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700';
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+------------------------------------------------------------- */
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 85%;
+  }
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Roboto';
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row {
+  margin-bottom: 0;
+}
+
+.card {
+  margin: 1rem 0 1rem 0;
+}
+
+.side-nav .collapsible-header {
+  padding: 0 40px;
+}
+
+.side-nav .header-contents {
+  padding: 0 30px 0 60px !important;
+  font-weight: 400;
+}
+
+.logo {
+  background-color: #000;
+  text-align: center;
+  position: fixed;
+  z-index: 998;
+}
+
+.logo img {
+  width: 50%;
+  vertical-align: middle;
+}
+
+.logo a {
+  position: absolute;
+  line-height: 0;
+  top: 14px;
+  color: white;
+  left: 15px;
+}
+
+.logo-placeholder {
+  height: 51px;
+}
+
+#slide-out li a {
+  padding: 0;
+  height: 60px;
+  line-height: 60px;
+}
+
+#slide-out li a .icon {
+  width: 50px;
+  height: inherit;
+  line-height: inherit;
+}
+
+#slide-out li a .icon-name {
+  width: 160px;
+  height: inherit;
+  line-height: inherit;
+}
+
+#slide-out li a i {
+  text-align: center;
+  margin: 0;
+  vertical-align: middle;
+}
+
+#slide-out li a p {
+  margin: 0;
+}
+
+#nav-icons {
+  transform: translateX(0);
+  width: 50px;
+  z-index: 1000;
+}
+
+#nav-icons li a {
+  padding: 0;
+  height: 60px;
+  line-height: 60px;
+}
+
+#nav-icons li a .icon {
+  width: 50px;
+  height: inherit;
+  line-height: inherit;
+}
+
+#nav-icons li a .icon-name {
+  width: 160px;
+  height: inherit;
+  line-height: inherit;
+}
+
+#nav-icons li a i {
+  text-align: center;
+  margin: 0;
+  vertical-align: middle;
+}
+
+#nav-icons li a p {
+  margin: 0;
+}
+
+.nav-inactive {
+  -webkit-transition: width 0.15s ease-in;
+  -khtml-transition: width 0.15s ease-in;
+  -moz-transition: width 0.15s ease-in;
+  -ms-transition: width 0.15s ease-in;
+  -o-transition: width 0.15s ease-in;
+  transition: width 0.15s ease-in;
+}
+
+.nav-active {
+  -webkit-transition: width 0.2s ease-out;
+  -khtml-transition: width 0.2s ease-out;
+  -moz-transition: width 0.2s ease-out;
+  -ms-transition: width 0.2s ease-out;
+  -o-transition: width 0.2s ease-out;
+  transition: width 0.2s ease-out;
+}
+
+#sidenav-grey {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 997;
+  opacity: 0;
+  display: none;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .parallax-container h2 {
+    font-size: 3rem;
+  }
+}
+
+.fold {
+  min-height: 275px;
+}
+
+.cover-container .profile-pic {
+  position: relative;
+  height: 110px;
+  padding: 0;
+}
+
+.cover-container .profile-pic img {
+  width: 220px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0px;
+  right: 50%;
+  transform: translate(50%);
+}
+
+.academics-container .acads {
+  height: 100px;
+  margin-top: 5px;
+}
+
+.academics-container .acad1 {
+  background-color: #0998e0;
+}
+
+.academics-container .acad2 {
+  background-color: #ff6e1e;
+}
+
+.academics-container .acad3 {
+  background-color: #3b3c3c;
+}
+
+.experience-container .company {
+  height: 100px;
+}
+
+.experience-container .experience1 {
+  background-color: #d7002c;
+}
+
+.experience-container .experience2 {
+  background-color: #f8a515;
+}
+
+.entrepreneurship-container .company {
+  height: 100px;
+}
+
+.entrepreneurship-container .entrepreneurship {
+  background-color: #004068;
+}
+
+.project-container .projects {
+  display: block;
+}
+
+.project-container .projects img {
+  width: 100%;
+}
+
+.project-container .project1 .card-stacked, .project-container .project1 .card-content {
+  background-color: #262634;
+}
+
+.project-container .project2 .card-stacked, .project-container .project2 .card-content {
+  background-color: #607d8b;
+}
+
+.project-container .project3 .card-stacked, .project-container .project3 .card-content {
+  background-color: #48485e;
+}
+
+.project-container .project4 .card-stacked, .project-container .project4 .card-content {
+  background-color: #4682b4;
+}
+
+.article-container .article {
+  width: 100%;
+}
+
+.article-container .card-content {
+  position: relative;
+}
+
+.article-container .card-title {
+  font-weight: 600;
+  max-height: 65px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.article-container .card-title:after {
+  content: "...";
+  position: absolute;
+  top: 80px;
+  left: 24px;
+}
+
+.article-container .description {
+  margin-top: 25px !important;
+  max-height: 60px;
+  overflow: hidden;
+}
+
+.article-container .description:after {
+  content: "...";
+  position: absolute;
+  bottom: 0px;
+  left: 24px;
+}
+
+.article-container .image {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.connect-container .col {
+  text-align: center;
+}
+
+.connect-container .col img {
+  width: 50px;
+}
+
+@media (max-width: 600px) {
+  .connect-container .col img {
+    width: 25px;
+  }
+}
+
+.connect-container .icon {
+  margin: 1rem 0 1rem 0;
+}
+
+.connect-container .icon a {
+  display: inline-block;
+}
+
+.heading h2 {
+  border-bottom: 1px solid;
+  border-left: 30px solid;
+  padding-left: 10px;
+  font-size: 2.5rem;
+}
+
+.education-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.education-container img {
+  height: 200px;
+  border-radius: 50%;
+}
+
+.education-container i {
+  margin-right: 15px;
+}
+
+.internships-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.internships-container .card {
+  font-size: 20px;
+  margin-bottom: 0;
+  padding: 0 15px;
+}
+
+@media (max-width: 600px) {
+  .internships-container .card {
+    font-size: 14px;
+  }
+}
+
+.internships-container .card p {
+  margin: 10px 0;
+}
+
+.internships-container .card .dates {
+  float: right;
+}
+
+@media (max-width: 600px) {
+  .internships-container .card .dates {
+    float: none;
+  }
+}
+
+.internships-container img {
+  max-width: 100px;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.internships-container i {
+  margin-right: 15px;
+}
+
+.internships-container span {
+  background-color: #212121;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin-right: 30px;
+}
+
+.internships-container .details {
+  margin-left: 54px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.internships-container .internship1 .card {
+  background-color: #00a1e3;
+}
+
+.internships-container .internship1 .intern-details1 {
+  background-color: rgba(0, 161, 227, 0.06);
+  padding-top: 15px;
+}
+
+.internships-container .internship1 .intern-details1 i {
+  color: #00a1e3;
+}
+
+.internships-container .internship1 .intern-details1 span {
+  background-color: #00a1e3;
+}
+
+.internships-container .internship1 .intern-details1 .valign-wrapper {
+  padding-left: 15px;
+}
+
+.internships-container .internship1 .btn {
+  background-color: #00a1e3;
+  margin-bottom: 15px;
+}
+
+.internships-container .internship1 .btn i {
+  color: white;
+}
+
+.internships-container .internship2 .card {
+  background-color: #ff6e1e;
+}
+
+.internships-container .internship2 .intern-details2 {
+  background-color: rgba(255, 110, 30, 0.06);
+  padding-top: 15px;
+}
+
+.internships-container .internship2 .intern-details2 i {
+  color: #ff6e1e;
+}
+
+.internships-container .internship2 .intern-details2 span {
+  background-color: #ff6e1e;
+}
+
+.internships-container .internship2 .intern-details2 .valign-wrapper {
+  padding-left: 15px;
+}
+
+.internships-container .internship2 .btn {
+  background-color: #ff6e1e;
+  margin-bottom: 15px;
+}
+
+.internships-container .internship2 .btn i {
+  color: white;
+}
+
+.projects-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.projects-container .card {
+  font-size: 20px;
+  margin-bottom: 0;
+  padding: 0 15px;
+}
+
+@media (max-width: 600px) {
+  .projects-container .card {
+    font-size: 14px;
+  }
+}
+
+.projects-container .card p {
+  margin: 10px 0;
+}
+
+.projects-container .card .dates {
+  float: right;
+}
+
+@media (max-width: 600px) {
+  .projects-container .card .dates {
+    float: none;
+  }
+}
+
+.projects-container img {
+  max-width: 100px;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.projects-container i {
+  margin-right: 15px;
+}
+
+.projects-container span {
+  background-color: #212121;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin-right: 30px;
+}
+
+.projects-container .details {
+  margin-left: 54px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.projects-container .project1 .card {
+  background-color: #745749;
+}
+
+.projects-container .project1 .project-details1 {
+  background-color: rgba(116, 87, 73, 0.06);
+  padding-top: 15px;
+}
+
+.projects-container .project1 .project-details1 i {
+  color: #745749;
+}
+
+.projects-container .project1 .project-details1 span {
+  background-color: #745749;
+}
+
+.projects-container .project1 .project-details1 .valign-wrapper {
+  padding-left: 15px;
+}
+
+.projects-container .project1 .btn {
+  background-color: #745749;
+  margin-bottom: 15px;
+}
+
+.projects-container .project1 .btn i {
+  color: white;
+}
+
+.projects-container .project2 .card {
+  background-color: #ed1c24;
+}
+
+.projects-container .project2 .project-details2 {
+  background-color: rgba(237, 28, 36, 0.06);
+  padding-top: 15px;
+}
+
+.projects-container .project2 .project-details2 i {
+  color: #ed1c24;
+}
+
+.projects-container .project2 .project-details2 span {
+  background-color: #ed1c24;
+}
+
+.projects-container .project2 .project-details2 .valign-wrapper {
+  padding-left: 15px;
+}
+
+.projects-container .project2 .btn {
+  background-color: #ed1c24;
+  margin-bottom: 15px;
+}
+
+.projects-container .project2 .btn i {
+  color: white;
+}
+
+.projects-container .project3 .card {
+  background-color: #056034;
+}
+
+.projects-container .project3 .project-details3 {
+  background-color: rgba(5, 96, 52, 0.06);
+  padding-top: 15px;
+}
+
+.projects-container .project3 .project-details3 i {
+  color: #056034;
+}
+
+.projects-container .project3 .project-details3 span {
+  background-color: #056034;
+}
+
+.projects-container .project3 .project-details3 .valign-wrapper {
+  padding-left: 15px;
+}
+
+.projects-container .project3 .project-details3 .audio-playback {
+  margin-bottom: 35px;
+}
+
+.projects-container .project3 .btn {
+  background-color: #056034;
+  margin-bottom: 15px;
+}
+
+.projects-container .project3 .btn i {
+  color: white;
+}
+
+.company-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.company-container .card {
+  font-size: 20px;
+  margin-bottom: 0;
+  padding: 0 15px;
+}
+
+@media (max-width: 600px) {
+  .company-container .card {
+    font-size: 14px;
+  }
+}
+
+.company-container .card p {
+  margin: 10px 0;
+}
+
+.company-container .card .dates {
+  float: right;
+}
+
+@media (max-width: 600px) {
+  .company-container .card .dates {
+    float: none;
+  }
+}
+
+.company-container .card .name {
+  font-size: 30px;
+}
+
+.company-container img {
+  max-width: 175px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.company-container i {
+  margin-right: 15px;
+}
+
+.company-container span {
+  background-color: #212121;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin-right: 30px;
+}
+
+.company-container .details {
+  margin-left: 39px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.company-container .company-details .row {
+  margin: 0;
+}
+
+.company-container .company-details .projects-carousel {
+  margin-left: 39px;
+  padding: 0;
+}
+
+.company-container .company1 .card {
+  background-color: #e03150;
+}
+
+.company-container .company1 .company-details1 {
+  background-color: rgba(224, 49, 80, 0.06);
+  padding-top: 15px;
+}
+
+.company-container .company1 .company-details1 i {
+  color: #e03150;
+}
+
+.company-container .company1 .company-details1 span {
+  background-color: #e03150;
+}
+
+.company-container .company1 .btn {
+  background-color: #e03150;
+  margin-bottom: 15px;
+}
+
+.company-container .company1 .btn i {
+  color: white;
+}
+
+.company-container .company2 .card {
+  background-color: #f8a91e;
+}
+
+.company-container .company2 .company-details2 {
+  background-color: rgba(248, 169, 30, 0.06);
+  padding-top: 15px;
+}
+
+.company-container .company2 .company-details2 i {
+  color: #f8a91e;
+}
+
+.company-container .company2 .company-details2 span {
+  background-color: #f8a91e;
+}
+
+.company-container .company2 .btn {
+  background-color: #f8a91e;
+  margin-bottom: 15px;
+}
+
+.company-container .company2 .btn i {
+  color: white;
+}
+
+.company-container .company2 .tabs-content {
+  background-color: rgba(248, 169, 30, 0.06);
+}
+
+.company-container .company2 .tabs .indicator {
+  background-color: #f8a91e;
+  height: 100%;
+}
+
+.company-container .company2 .tabs .tab a {
+  background-color: rgba(248, 169, 30, 0.5);
+  color: white;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.company-container .company2 .tabs .tab a:hover {
+  background-color: #f8a91e;
+}
+
+.entrepreneurship-container .details {
+  margin-left: 39px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.entrepreneurship-container .links a {
+  display: block;
+  color: inherit;
+}
+
+.entrepreneurship-container .carousel {
+  border: 1px solid #0d4b71;
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .entrepreneurship-container .carousel {
+    max-height: 250px;
+  }
+}
+
+.entrepreneurship-container .carousel .indicators {
+  background-color: #0d4b71;
+}
+
+.entrepreneurship-container .carousel .indicators .indicator-item {
+  height: 12px;
+  width: 12px;
+  margin: 8px 4px;
+  vertical-align: middle;
+}
+
+.entrepreneurship-container .materialboxed {
+  margin: auto;
+}
+
+.entrepreneurship1 .cover {
+  margin-bottom: 2em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.entrepreneurship1 .cover img {
+  width: 200px;
+}
+
+@media (min-width: 601px) {
+  .entrepreneurship1 .cover img {
+    width: 300px;
+  }
+}
+
+.entrepreneurship1 .headings i {
+  margin-right: 15px;
+  color: #0d4b71;
+}
+
+.entrepreneurship1 .headings span {
+  background-color: #0d4b71;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin-right: 30px;
+}
+
+.entrepreneurship1 .problems, .entrepreneurship1 .idea, .entrepreneurship1 .website, .entrepreneurship1 .app {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.entrepreneurship1 .problems figure, .entrepreneurship1 .idea figure, .entrepreneurship1 .website figure, .entrepreneurship1 .app figure {
+  margin: 15px 0;
+}
+
+.entrepreneurship1 .problems figcaption, .entrepreneurship1 .idea figcaption, .entrepreneurship1 .website figcaption, .entrepreneurship1 .app figcaption {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.entrepreneurship1 .problems figcaption p, .entrepreneurship1 .idea figcaption p, .entrepreneurship1 .website figcaption p, .entrepreneurship1 .app figcaption p {
+  margin: 0;
+}
+
+.entrepreneurship1 .problems img, .entrepreneurship1 .idea img, .entrepreneurship1 .website img, .entrepreneurship1 .app img {
+  height: 200px;
+}
+
+@media (max-width: 600px) {
+  .entrepreneurship1 .problems img, .entrepreneurship1 .idea img, .entrepreneurship1 .website img, .entrepreneurship1 .app img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.entrepreneurship1 .problems .btn, .entrepreneurship1 .idea .btn, .entrepreneurship1 .website .btn, .entrepreneurship1 .app .btn {
+  background-color: #0d4b71;
+  margin-top: 15px;
+}
+
+.entrepreneurship1 .app img {
+  height: auto;
+}
+
+.personal-projects-container .projects .image {
+  background-image: url(/images/home/project1.png);
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.personal-projects-container .project1 .card-content {
+  background-color: #262634;
+}
+
+.personal-projects-container .project2 .card-content {
+  background-color: #607d8b;
+}
+
+.personal-projects-container .project3 .card-content {
+  background-color: #48485e;
+}
+
+.personal-projects-container .project4 .card-content {
+  background-color: #4682b4;
+}
+
+.personal-projects-container .project5 .card-content {
+  background-color: #f1592a;
+}
+
+.personal-projects-container .project6 .card-content {
+  background-color: #10bbb3;
+}
+
+.personal-projects-container .more-projects a {
+  margin: auto;
+}

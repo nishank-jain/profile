@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+	head
+		include headtags
+	body
+		if is_phone
+			include sections/header
+		//- 	.hide
+		//- 		include ../sections/subbar
+		//- else	
+		//- 	.hide
+		//- 		include ../sections/topbar
+		//- 		include ../sections/subbar
+		include sections/sidebar
+		block content
+		//- include sections/footer
+		//- block commonjs
+		//- 	include common-scripts
+		block js
+			include scripts
